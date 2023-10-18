@@ -1,0 +1,31 @@
+p {
+  color: white;
+}
+
+.main-container {
+  background: #0e0b14;
+  display: flex;
+  gap: 40px;
+}
+.main-container .logo {
+  height: 50px;
+  padding: 10px;
+}
+.main-container .section-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.main-container .section-container .section-icon {
+  height: 24px;
+  width: 24px;
+  fill: white;
+}
+.main-container .section-container .plus-icon {
+  height: 14px;
+  width: 14px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/*# sourceMappingURL=navbar.css.map */
