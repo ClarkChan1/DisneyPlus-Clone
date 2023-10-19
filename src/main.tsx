@@ -5,6 +5,7 @@ import "./main.css";
 import Navbar from "./navbar";
 import Home from "./home";
 import Search from "./search";
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Main />

@@ -1,9 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import "./navbar.css";
 function Navbar() {
+  const navigate = useNavigate();
   return (
     <div className="nav-bar-container">
       <img src="images/logo.png" alt="" className="logo" />
-      <div className="section-container">
+      <div
+        className="section-container"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <svg
           aria-hidden="true"
           aria-label="home"
@@ -21,7 +28,12 @@ function Navbar() {
         </svg>
         <p className="section-title">Home</p>
       </div>
-      <div className="section-container">
+      <div
+        className="section-container"
+        onClick={() => {
+          navigate("search");
+        }}
+      >
         <svg
           aria-hidden="true"
           aria-label="search"
