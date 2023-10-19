@@ -1,7 +1,7 @@
 import "./navbar.css";
 function Navbar() {
   return (
-    <div className="main-container">
+    <div className="nav-bar-container">
       <img src="images/logo.png" alt="" className="logo" />
       <div className="section-container">
         <svg
