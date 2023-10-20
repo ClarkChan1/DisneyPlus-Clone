@@ -1,7 +1,9 @@
-.home-container {
+.home-container .row-container .content-container {
+  display: grid;
+}
+.home-container .row-container .content-container .content-img {
   height: 200px;
-  width: 200px;
-  background: bisque;
+  width: 300px;
 }
 
 /*# sourceMappingURL=home.css.map */

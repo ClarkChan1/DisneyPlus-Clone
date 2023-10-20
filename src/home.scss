@@ -1,5 +1,13 @@
 .home-container {
-  height: 200px;
-  width: 200px;
-  background: bisque;
+  .row-container {
+    .section-title {
+    }
+    .content-container {
+      display: grid;
+      .content-img {
+        height: 200px;
+        width: 300px;
+      }
+    }
+  }
 }

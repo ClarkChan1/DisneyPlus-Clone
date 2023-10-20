@@ -1,5 +1,7 @@
 p {
   color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
 }
 
 .nav-bar-container {

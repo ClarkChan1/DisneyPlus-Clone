@@ -1,7 +1,13 @@
+@font-face {
+  font-family: "disney-font";
+  src: url("../fonts/disney-font.woff2");
+}
+
 html,
 body {
   background: rgb(26, 29, 41);
   margin: 0;
+  font-family: disney-font;
 }
 
 .main-container {
