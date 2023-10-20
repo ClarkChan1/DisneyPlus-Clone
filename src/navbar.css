@@ -1,13 +1,13 @@
 p {
   color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
 }
 
 .nav-bar-container {
   background: #0e0b14;
   display: flex;
   gap: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
 }
 .nav-bar-container .logo {
   height: 50px;
@@ -29,6 +29,9 @@ p {
   width: 14px;
   padding-left: 4px;
   padding-right: 4px;
+}
+.nav-bar-container .section-container .section-title:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=navbar.css.map */
