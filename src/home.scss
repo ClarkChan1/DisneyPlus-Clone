@@ -3,10 +3,11 @@
     .section-title {
     }
     .content-container {
-      display: grid;
+      overflow: auto;
+      white-space: nowrap;
       .content-img {
-        height: 200px;
-        width: 300px;
+        width: 40%;
+        padding: 5%;
       }
     }
   }

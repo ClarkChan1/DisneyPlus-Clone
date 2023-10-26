@@ -1,9 +1,10 @@
 .home-container .row-container .content-container {
-  display: grid;
+  overflow: auto;
+  white-space: nowrap;
 }
 .home-container .row-container .content-container .content-img {
-  height: 200px;
-  width: 300px;
+  width: 40%;
+  padding: 5%;
 }
 
 /*# sourceMappingURL=home.css.map */
