@@ -1,10 +1,14 @@
 .home-container .row-container .content-container {
   overflow: auto;
   white-space: nowrap;
+  scroll-behavior: smooth;
 }
 .home-container .row-container .content-container .content-img {
   width: 40%;
   padding: 5%;
+}
+.home-container .row-container .content-container::-webkit-scrollbar {
+  display: none;
 }
 
 /*# sourceMappingURL=home.css.map */

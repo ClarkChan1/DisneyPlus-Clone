@@ -1,18 +1,9 @@
-.slider-container {
-  display: flex;
-  .nav-button {
-    border: none;
-    border-radius: 4px;
-    background: none;
-    cursor: pointer;
-    opacity: 0;
-    transition: 0.2s ease-out;
-    .arrow-icon {
-      height: 40px;
-      fill: white;
-    }
-  }
-  .nav-button:hover {
-    opacity: 1;
-  }
+.swiper {
+  width: 500px;
+  height: 300px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: white;
 }

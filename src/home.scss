@@ -5,10 +5,14 @@
     .content-container {
       overflow: auto;
       white-space: nowrap;
+      scroll-behavior: smooth;
       .content-img {
         width: 40%;
         padding: 5%;
       }
+    }
+    .content-container::-webkit-scrollbar {
+      display: none;
     }
   }
 }
