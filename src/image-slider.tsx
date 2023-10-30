@@ -1,73 +1,53 @@
 import "./image-slider.css";
-import Swiper from "swiper/bundle";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { Swiper as SwiperType } from "swiper";
+import { useRef } from "react";
+import "swiper/css";
 
-// import styles bundle
-import "swiper/css/bundle";
 function ImageSlider() {
-  const swiper = new Swiper(".swiper", {
-    slidesPerView: 1,
-    // Optional parameters
-    direction: "horizontal",
-    loop: false,
-
-    // If we need pagination
-    pagination: {
-      el: ".swiper-pagination",
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-      el: ".swiper-scrollbar",
-    },
-  });
+  const swiperRef = useRef<SwiperType>();
   return (
-    <div className="swiper">
-      <div className="swiper-wrapper">
-        <div className="swiper-slide">
-          <img
-            src="../images/clone-wars-pic.jpg"
-            alt=""
-            className="content-img"
-          />
-        </div>
-        <div className="swiper-slide">
-          <img
-            src="../images/clone-wars-pic.jpg"
-            alt=""
-            className="content-img"
-          />
-        </div>
-        <div className="swiper-slide">
-          <img
-            src="../images/clone-wars-pic.jpg"
-            alt=""
-            className="content-img"
-          />
-        </div>
-        <div className="swiper-slide">
-          <img
-            src="../images/clone-wars-pic.jpg"
-            alt=""
-            className="content-img"
-          />
-        </div>
-        <div className="swiper-slide">
-          <img
-            src="../images/clone-wars-pic.jpg"
-            alt=""
-            className="content-img"
-          />
-        </div>
-      </div>
-      <div className="swiper-button-prev"></div>
-      <div className="swiper-button-next"></div>
-    </div>
+    <Swiper
+      modules={[Navigation]}
+      onBeforeInit={(swiper) => {
+        swiperRef.current = swiper;
+      }}
+      slidesPerView={1.5}
+      centeredSlides={true}
+      spaceBetween={30}
+    >
+      <SwiperSlide>
+        <img
+          src="../images/clone-wars-pic.jpg"
+          alt=""
+          className="content-img"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img
+          src="../images/clone-wars-pic.jpg"
+          alt=""
+          className="content-img"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img
+          src="../images/clone-wars-pic.jpg"
+          alt=""
+          className="content-img"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img
+          src="../images/clone-wars-pic.jpg"
+          alt=""
+          className="content-img"
+        />
+      </SwiperSlide>
+      <button onClick={() => swiperRef.current?.slidePrev()}>Prev</button>
+      <button onClick={() => swiperRef.current?.slideNext()}>Next</button>
+    </Swiper>
   );
 }
 export default ImageSlider;
