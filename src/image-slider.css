@@ -24,6 +24,7 @@
 }
 .nav-button-container .hide {
   opacity: 0;
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=image-slider.css.map */

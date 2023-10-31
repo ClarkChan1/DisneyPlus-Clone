@@ -15,17 +15,24 @@ function ImageSlider() {
       onBeforeInit={(swiper) => {
         swiperRef.current = swiper;
       }}
-      slidesPerView={1.5}
-      centeredSlides={true}
+      //   centeredSlides={true}
       spaceBetween={30}
+      breakpoints={{
+        768: { slidesPerView: 2.2 },
+        1024: { slidesPerView: 3.3 },
+        1440: { slidesPerView: 4.4 },
+        1441: { slidesPerView: 5.5 },
+      }}
       onProgress={(swiper, progress) => {
         console.log("progress: ", progress);
         if (progress == 0) {
           // first slide
           updateShowPrevButton(false);
+          updateShowNextButton(true);
         } else if (progress == 1) {
           // last slide
           updateShowNextButton(false);
+          updateShowPrevButton(true);
         } else {
           updateShowNextButton(true);
           updateShowPrevButton(true);

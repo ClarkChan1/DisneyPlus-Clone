@@ -1,6 +1,8 @@
 .home-container {
+  padding: 0 calc(3.5vw + 24px);
   .row-container {
     .section-title {
+      user-select: none;
     }
     .content-container {
       overflow: auto;
