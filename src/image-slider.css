@@ -1,6 +1,26 @@
 .content-img {
   width: 100%;
   height: 500px;
+  background: brown;
+}
+
+.nav-button-container {
+  display: flex;
+  z-index: 1;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+.nav-button-container .nav-button {
+  cursor: pointer;
+}
+.nav-button-container .nav-button .arrow-icon {
+  height: 36px;
+  width: 36px;
+  fill: white;
 }
 
 /*# sourceMappingURL=image-slider.css.map */
