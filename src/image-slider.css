@@ -22,5 +22,8 @@
   width: 36px;
   fill: white;
 }
+.nav-button-container .hide {
+  opacity: 0;
+}
 
 /*# sourceMappingURL=image-slider.css.map */

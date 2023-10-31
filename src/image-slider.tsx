@@ -2,11 +2,13 @@ import "./image-slider.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "swiper/css";
 
 function ImageSlider() {
   const swiperRef = useRef<SwiperType>();
+  const [showPrevButton, updateShowPrevButton] = useState(true);
+  const [showNextButton, updateShowNextButton] = useState(true);
   return (
     <Swiper
       modules={[Navigation]}
@@ -16,6 +18,19 @@ function ImageSlider() {
       slidesPerView={1.5}
       centeredSlides={true}
       spaceBetween={30}
+      onProgress={(swiper, progress) => {
+        console.log("progress: ", progress);
+        if (progress == 0) {
+          // first slide
+          updateShowPrevButton(false);
+        } else if (progress == 1) {
+          // last slide
+          updateShowNextButton(false);
+        } else {
+          updateShowNextButton(true);
+          updateShowPrevButton(true);
+        }
+      }}
     >
       <SwiperSlide>
         <img
@@ -47,7 +62,7 @@ function ImageSlider() {
       </SwiperSlide>
       <div className="nav-button-container">
         <div
-          className="nav-button"
+          className={"nav-button " + (showPrevButton ? "" : "hide")}
           onClick={() => swiperRef.current?.slidePrev()}
         >
           <svg
@@ -66,7 +81,7 @@ function ImageSlider() {
           </svg>
         </div>
         <div
-          className="nav-button"
+          className={"nav-button " + (showNextButton ? "" : "hide")}
           onClick={() => swiperRef.current?.slideNext()}
         >
           <svg
