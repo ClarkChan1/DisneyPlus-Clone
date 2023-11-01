@@ -9,19 +9,11 @@ function Home() {
       </div>
       <div className="row-container">
         <p className="section-title">Walt Disney Animation Studios</p>
-        <div className="content-container">
-          <img src="" alt="" className="content-img" />
-          <img src="" alt="" className="content-img" />
-          <img src="" alt="" className="content-img" />
-        </div>
+        <ImageSlider></ImageSlider>
       </div>
       <div className="row-container">
         <p className="section-title">Star Wars</p>
-        <div className="content-container">
-          <img src="" alt="" className="content-img" />
-          <img src="" alt="" className="content-img" />
-          <img src="" alt="" className="content-img" />
-        </div>
+        <ImageSlider></ImageSlider>
       </div>
     </div>
   );

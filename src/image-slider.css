@@ -1,30 +1,30 @@
-.content-img {
-  width: 100%;
-  height: 500px;
-  background: brown;
-}
-
-.nav-button-container {
+.swiper-container {
   display: flex;
-  z-index: 1;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
+  align-items: stretch;
 }
-.nav-button-container .nav-button {
+.swiper-container .nav-button {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
   cursor: pointer;
 }
-.nav-button-container .nav-button .arrow-icon {
+.swiper-container .nav-button .arrow-icon {
   height: 36px;
   width: 36px;
   fill: white;
 }
-.nav-button-container .hide {
+.swiper-container .hide {
   opacity: 0;
   pointer-events: none;
+}
+
+.content-img {
+  width: 100%;
+  height: 20vw;
+  max-height: 180px;
+  background: brown;
+  border-radius: 8px;
 }
 
 /*# sourceMappingURL=image-slider.css.map */
