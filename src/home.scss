@@ -1,8 +1,10 @@
+@import "./globals.scss";
 .home-container {
-  padding: 0 calc(3.5vw + 24px);
   .row-container {
     .section-title {
+      font-size: 20pxq;
       user-select: none;
+      padding-left: $arrow-dimensions + $swiper-padding + (2 * $arrow-padding);
     }
     .content-container {
       overflow: auto;

@@ -1,15 +1,20 @@
-.swiper-container {
+@import "./globals.scss";
+
+.total-container {
   display: flex;
   align-items: stretch;
+  .swiper-container {
+    padding: $swiper-padding;
+  }
   .nav-button {
     display: flex;
     align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: $arrow-padding;
+    padding-right: $arrow-padding;
     cursor: pointer;
     .arrow-icon {
-      height: 36px;
-      width: 36px;
+      height: $arrow-dimensions;
+      width: $arrow-dimensions;
       fill: white;
     }
   }
@@ -20,8 +25,12 @@
 }
 .content-img {
   width: 100%;
-  height: 20vw;
-  max-height: 180px;
+  height: auto;
   background: brown;
   border-radius: 8px;
+}
+.content-img:hover {
+  transition: 0.1s ease-in;
+  transform: scale(1.05);
+  outline: 2px solid white;
 }

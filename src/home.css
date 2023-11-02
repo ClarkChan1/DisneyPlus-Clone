@@ -1,8 +1,7 @@
-.home-container {
-  padding: 0 calc(3.5vw + 24px);
-}
 .home-container .row-container .section-title {
+  font-size: 20px;
   user-select: none;
+  padding-left: 76px;
 }
 .home-container .row-container .content-container {
   overflow: auto;
