@@ -53,7 +53,7 @@ function ImageSlider(props: Props) {
           1441: { slidesPerView: 5 },
         }}
         onProgress={(swiper, progress) => {
-          console.log("progress: ", progress);
+          //   console.log("progress: ", progress);
           if (progress == 0) {
             // first slide
             updateShowPrevButton(false);
@@ -70,7 +70,13 @@ function ImageSlider(props: Props) {
       >
         {props.images.map((image) => (
           <SwiperSlide>
-            <img src={image} alt="" className="content-img" />
+            <img
+              src={image}
+              width={400}
+              height={225}
+              alt=""
+              className="content-img"
+            />
           </SwiperSlide>
         ))}
       </Swiper>
