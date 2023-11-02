@@ -5,9 +5,11 @@
 html,
 body {
   background: rgb(26, 29, 41);
+  background-image: url("../images/background.png");
   margin: 0;
   font-family: disney-font;
   color: white;
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */

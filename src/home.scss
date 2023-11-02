@@ -5,6 +5,7 @@
       font-size: 20px;
       user-select: none;
       padding-left: $arrow-dimensions + $swiper-padding + (2 * $arrow-padding);
+      margin-bottom: 0;
     }
     .content-container {
       overflow: auto;

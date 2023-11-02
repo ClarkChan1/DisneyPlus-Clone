@@ -23,6 +23,7 @@
 }
 
 .content-img {
+  box-shadow: 0px 7px 7px -7px rgba(0, 0, 0, 0.5), 0px 16px 10px -10px rgba(0, 0, 0, 0.5), 0px 25px 14px -14px rgba(0, 0, 0, 0.5);
   width: 100%;
   height: auto;
   aspect-ratio: 400/225;
@@ -32,7 +33,7 @@
 }
 
 .content-img:hover {
-  transition: 0.1s ease-in;
+  transition: 0.15s ease-in;
   transform: scale(1.05);
   outline: 2px solid white;
 }
