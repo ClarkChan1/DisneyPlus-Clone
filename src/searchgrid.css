@@ -1,0 +1,37 @@
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px 76px;
+}
+.search-grid .grid-img {
+  box-shadow: 0px 7px 7px -7px rgba(0, 0, 0, 0.5), 0px 16px 10px -10px rgba(0, 0, 0, 0.5), 0px 25px 14px -14px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 500/750;
+  border-radius: 8px;
+  user-select: none;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .search-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .search-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .search-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .search-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/*# sourceMappingURL=searchgrid.css.map */

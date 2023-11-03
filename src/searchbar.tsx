@@ -1,43 +1,32 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Dispatch, SetStateAction } from "react";
 import "./searchbar.css";
-function Searchbar() {
+import getPosters from "../utils/getPosters";
+interface Props {
+  updateMovies: Dispatch<SetStateAction<string[]>>;
+  updateTV: Dispatch<SetStateAction<string[]>>;
+}
+
+function Searchbar(props: Props) {
   const [searchText, updateSearchText] = useState("");
-  const [movies, updateMovies] = useState([]);
-  const [tv, updateTV] = useState([]);
-  //   useEffect(() => {
-  //     console.log("searchText updated: ", searchText);
-  //   }, [searchText]);
   useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${import.meta.env.VITE_TMDB_API_KEY}`,
-      },
-    };
-    // get movies
-    fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_companies=2%7C3475%7C15935",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        updateMovies(response);
-      })
-      .catch((err) => console.error(err));
-    // get tv series
-    fetch(
-      "https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&with_companies=2%7C3475%7C15935",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response.results);
-        updateTV(response);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+    console.log("saerch: ", searchText);
+    async function getData() {
+      // get movies
+      props.updateMovies(
+        await getPosters(
+          `https://api.themoviedb.org/3/search/movie?query=${searchText}&include_adult=false&language=en-US&page=1`
+        )
+      );
+      // get tv series
+      props.updateTV(
+        await getPosters(
+          `https://api.themoviedb.org/3/search/tv?query=${searchText}&include_adult=false&language=en-US&page=1`
+        )
+      );
+      console.log("supposedly set");
+    }
+    getData();
+  }, [searchText]);
   return (
     <div className="searchbar-container">
       <input
