@@ -14,7 +14,7 @@ function SearchGrid(props: Props) {
   return (
     <div className="search-grid">
       {content.map((imgUrl) => (
-        <img className="grid-img" src={imgUrl} alt=""></img>
+        <img key={imgUrl} className="content-img" src={imgUrl} alt=""></img>
       ))}
     </div>
   );

@@ -5,8 +5,8 @@
 
 html,
 body {
-  background: rgb(26, 29, 41);
-  background-image: url("../images/background.png");
+  background: url("../images/background.png") 50% / cover no-repeat fixed;
+
   margin: 0;
   font-family: disney-font;
   color: white;

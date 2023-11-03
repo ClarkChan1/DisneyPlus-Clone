@@ -9,7 +9,6 @@ interface Props {
 function Searchbar(props: Props) {
   const [searchText, updateSearchText] = useState("");
   useEffect(() => {
-    console.log("saerch: ", searchText);
     async function getData() {
       // get movies
       props.updateMovies(
@@ -23,7 +22,6 @@ function Searchbar(props: Props) {
           `https://api.themoviedb.org/3/search/tv?query=${searchText}&include_adult=false&language=en-US&page=1`
         )
       );
-      console.log("supposedly set");
     }
     getData();
   }, [searchText]);

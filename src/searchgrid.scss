@@ -5,7 +5,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px ($arrow-dimensions + $swiper-padding + (2 * $arrow-padding));
-  .grid-img {
+  .content-img {
     box-shadow: 0px 7px 7px -7px rgba(0, 0, 0, 0.5),
       0px 16px 10px -10px rgba(0, 0, 0, 0.5),
       0px 25px 14px -14px rgba(0, 0, 0, 0.5);
@@ -15,6 +15,12 @@
     aspect-ratio: 500 / 750;
     border-radius: 8px;
     user-select: none;
+  }
+  .content-img:hover {
+    transition: 0.15s ease-in;
+    transform: scale(1.05);
+    outline: 3px solid white;
+    outline-offset: 3px;
   }
 }
 
