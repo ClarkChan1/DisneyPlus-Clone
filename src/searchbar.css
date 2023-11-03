@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "disney-font";
+  src: url("../fonts/disney-font.woff2");
+}
+::placeholder {
+  color: rgb(168, 169, 173);
+  transition: 0.15s ease-in;
+}
+
+.searchbar-container {
+  background: rgb(75, 78, 90);
+  display: flex;
+  height: 60px;
+  opacity: 0.8;
+}
+.searchbar-container .searchbar {
+  flex: 1;
+  background: none;
+  border: none;
+  color: rgb(168, 169, 173);
+  transition: 0.15s ease-in;
+  letter-spacing: 0.11px;
+  font-size: 44px;
+  font-family: "disney-font";
+  font-weight: bold;
+  padding-left: 76px;
+}
+.searchbar-container .searchbar:focus,
+.searchbar-container .searchbar:focus + .clear-button {
+  background: rgb(98, 102, 118);
+  outline: none;
+  color: rgb(249, 249, 249);
+}
+.searchbar-container .searchbar:focus::placeholder {
+  color: rgb(249, 249, 249);
+}
+.searchbar-container .clear-button {
+  background: none;
+  border: none;
+  font-size: 44px;
+  transition: 0.15s ease-in;
+  display: flex;
+  align-items: center;
+}
+.searchbar-container .clear-button .x-icon {
+  fill: rgb(249, 249, 249);
+  height: 40px;
+  width: 40px;
+}
+
+/*# sourceMappingURL=searchbar.css.map */

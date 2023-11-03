@@ -69,7 +69,7 @@ function ImageSlider(props: Props) {
         }}
       >
         {props.images.map((image) => (
-          <SwiperSlide>
+          <SwiperSlide key={image}>
             <img src={image} alt="" className="content-img" />
           </SwiperSlide>
         ))}
