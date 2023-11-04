@@ -12,17 +12,9 @@ function Searchbar(props: Props) {
   useEffect(() => {
     async function getData() {
       // get movies
-      props.updateMovies(
-        await getPosters(
-          `https://api.themoviedb.org/3/search/movie?query=${searchText}&include_adult=false&language=en-US&page=1`
-        )
-      );
+      props.updateMovies(await getPosters("search", "movie", searchText));
       // get tv series
-      props.updateTV(
-        await getPosters(
-          `https://api.themoviedb.org/3/search/tv?query=${searchText}&include_adult=false&language=en-US&page=1`
-        )
-      );
+      props.updateTV(await getPosters("search", "tv", searchText));
     }
     getData();
   }, [searchText]);

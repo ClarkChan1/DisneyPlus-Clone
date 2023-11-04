@@ -3,6 +3,7 @@ import "./home.css";
 import ImageSlider from "./image-slider";
 import getPosters from "../utils/getPosters";
 import { useNavigate } from "react-router-dom";
+
 function Home() {
   const [disneyChannelImages, updateDisneyChannelImages] = useState([]);
   const [disneyMovieImages, updateDisneyMovieImages] = useState([]);
@@ -11,20 +12,12 @@ function Home() {
   useEffect(() => {
     async function getData() {
       updateDisneyChannelImages(
-        await getPosters(
-          "https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&with_companies=3475"
-        )
+        await getPosters("discover", "tv", "Disney Television Animation")
       );
       updateDisneyMovieImages(
-        await getPosters(
-          "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_companies=6125"
-        )
+        await getPosters("discover", "movie", "Walt Disney Animation Studios")
       );
-      updateStarWarsImages(
-        await getPosters(
-          "https://api.themoviedb.org/3/search/movie?query=star%20wars&include_adult=false&language=en-US&page=1"
-        )
-      );
+      updateStarWarsImages(await getPosters("search", "movie", "star wars"));
     }
     getData();
   }, []);
