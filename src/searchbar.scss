@@ -42,6 +42,8 @@
     transition: 0.15s ease-in;
     display: flex;
     align-items: center;
+    cursor: pointer;
+    padding-right: 20px;
     .x-icon {
       fill: rgb(249, 249, 249);
       height: 40px;
