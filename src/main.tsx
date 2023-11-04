@@ -5,6 +5,7 @@ import "./main.css";
 import Navbar from "./navbar";
 import Home from "./home";
 import Search from "./search";
+import Content from "./content";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -19,6 +20,7 @@ function Main() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="search" element={<Search />} />
+        <Route path="content" element={<Content />} />
       </Routes>
     </BrowserRouter>
   );
