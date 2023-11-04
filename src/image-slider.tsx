@@ -5,8 +5,12 @@ import { Swiper as SwiperType } from "swiper";
 import { useRef, useState } from "react";
 import "swiper/css";
 
+interface content {
+  poster_path: string;
+  name: string;
+}
 interface Props {
-  images: string[];
+  content: Array<content>;
 }
 
 function ImageSlider(props: Props) {
@@ -68,9 +72,16 @@ function ImageSlider(props: Props) {
           }
         }}
       >
-        {props.images.map((image) => (
-          <SwiperSlide key={image}>
-            <img src={image} alt="" className="content-img" />
+        {props.content.map((content) => (
+          <SwiperSlide key={content.poster_path}>
+            <img
+              src={content.poster_path}
+              alt=""
+              className="content-img"
+              onClick={() => {
+                console.log("name: ", content.name);
+              }}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

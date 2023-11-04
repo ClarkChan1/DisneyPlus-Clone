@@ -44,12 +44,21 @@ async function getPosters(
   const url = await getPosterUrl(searchType, contentType, query);
   const response = await fetch(url, fetch_options);
   const data = await response.json();
-  const posters = data.results
-    .map((movie: { poster_path: any }) => movie.poster_path)
-    .filter((movie: any) => movie);
-  let imageUrls = posters.map(
-    (poster: string) => "http://image.tmdb.org/t/p/w500" + poster
-  );
-  return imageUrls;
+  const content = data.results
+    .filter((content: any) => content.poster_path) // filter null values
+    .map(
+      (content: {
+        poster_path: string;
+        original_title?: string;
+        original_name?: string;
+      }) => ({
+        poster_path: "http://image.tmdb.org/t/p/w500" + content.poster_path,
+        name:
+          contentType == "movie"
+            ? content.original_title
+            : content.original_name,
+      })
+    );
+  return content;
 }
 export default getPosters;
