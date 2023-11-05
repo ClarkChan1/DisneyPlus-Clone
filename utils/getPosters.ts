@@ -46,19 +46,11 @@ async function getPosters(
   const data = await response.json();
   const content = data.results
     .filter((content: any) => content.poster_path) // filter null values
-    .map(
-      (content: {
-        poster_path: string;
-        original_title?: string;
-        original_name?: string;
-      }) => ({
-        poster_path: "http://image.tmdb.org/t/p/w500" + content.poster_path,
-        name:
-          contentType == "movie"
-            ? content.original_title
-            : content.original_name,
-      })
-    );
+    .map((content: { poster_path: string; id: number }) => ({
+      poster_path: "http://image.tmdb.org/t/p/w500" + content.poster_path,
+      id: content.id,
+      contentType: contentType,
+    }));
   return content;
 }
 export default getPosters;

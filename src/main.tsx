@@ -19,8 +19,8 @@ function Main() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="search" element={<Search />} />
-        <Route path="content" element={<Content />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/content" element={<Content />} />
       </Routes>
     </BrowserRouter>
   );

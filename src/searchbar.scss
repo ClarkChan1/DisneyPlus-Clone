@@ -23,7 +23,7 @@
     font-size: 44px;
     font-family: "disney-font";
     font-weight: bold;
-    padding-left: $arrow-dimensions + $swiper-padding + (2 * $arrow-padding);
+    padding-left: $edge-padding;
   }
   .searchbar:focus,
   .searchbar:focus + .clear-button {

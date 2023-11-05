@@ -2,20 +2,18 @@ import { useEffect, useState } from "react";
 import "./home.css";
 import ImageSlider from "./image-slider";
 import getPosters from "../utils/getPosters";
-import { useNavigate } from "react-router-dom";
-interface content {
-  poster_path: string;
-  name: string;
-}
+import { posterAndName } from "./types";
+
 function Home() {
   const [disneyChannelImages, updateDisneyChannelImages] = useState<
-    Array<content>
+    Array<posterAndName>
   >([]);
-  const [disneyMovieImages, updateDisneyMovieImages] = useState<Array<content>>(
+  const [disneyMovieImages, updateDisneyMovieImages] = useState<
+    Array<posterAndName>
+  >([]);
+  const [starWarsImages, updateStarWarsImages] = useState<Array<posterAndName>>(
     []
   );
-  const [starWarsImages, updateStarWarsImages] = useState<Array<content>>([]);
-  const navigate = useNavigate();
   useEffect(() => {
     async function getData() {
       updateDisneyChannelImages(
@@ -32,11 +30,6 @@ function Home() {
     <div className="home-container">
       <div className="row-container">
         <p className="section-title">Disney Channel</p>
-        <button
-          onClick={() => {
-            navigate("content", { state: { title: "test" } });
-          }}
-        ></button>
         <ImageSlider content={disneyChannelImages}></ImageSlider>
       </div>
       <div className="row-container">

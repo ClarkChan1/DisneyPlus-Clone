@@ -1,0 +1,33 @@
+@import "./globals.scss";
+.content-container {
+  background-color: rgb(26, 29, 41);
+  .backdrop-container {
+    background-size: cover;
+    position: relative;
+    .backdrop {
+      width: 100vw;
+    }
+    .fade-effect {
+      position: absolute;
+      inset: 0px;
+      background-image: radial-gradient(
+        farthest-side at 73% 21%,
+        transparent,
+        rgb(26, 29, 41)
+      );
+    }
+  }
+  .logo-and-description-container {
+    padding: $edge-padding;
+    position: absolute;
+    font-size: 20px;
+    color: #f9f9f9;
+    top: 56px;
+    .logo {
+      margin-top: 56px;
+      max-width: 341px;
+      min-width: 100px;
+      width: 35vw;
+    }
+  }
+}

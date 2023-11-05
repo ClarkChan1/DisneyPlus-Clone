@@ -1,20 +1,32 @@
 import { useEffect, useState } from "react";
 import "./searchgrid.css";
-
+import { useNavigate } from "react-router-dom";
+import { posterAndName } from "./types";
 interface Props {
-  movies: string[];
-  tv: string[];
+  movies: posterAndName[];
+  tv: posterAndName[];
 }
 
 function SearchGrid(props: Props) {
-  const [content, updateContent] = useState<string[]>([]);
+  const [media, updateMedia] = useState<posterAndName[]>([]);
+  const navigate = useNavigate();
   useEffect(() => {
-    updateContent(props.movies.concat(props.tv));
+    updateMedia(props.movies.concat(props.tv));
   }, [props.movies, props.tv]);
   return (
     <div className="search-grid">
-      {content.map((imgUrl) => (
-        <img key={imgUrl} className="content-img" src={imgUrl} alt=""></img>
+      {media.map((content) => (
+        <img
+          key={content.poster_path}
+          src={content.poster_path}
+          alt=""
+          className="content-img"
+          onClick={() => {
+            navigate("/content", {
+              state: { id: content.id, contentType: content.contentType },
+            });
+          }}
+        />
       ))}
     </div>
   );

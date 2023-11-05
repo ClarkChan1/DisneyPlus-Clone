@@ -4,13 +4,10 @@ import { Navigation } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
 import { useRef, useState } from "react";
 import "swiper/css";
+import { posterAndName } from "./types";
 
-interface content {
-  poster_path: string;
-  name: string;
-}
 interface Props {
-  content: Array<content>;
+  content: Array<posterAndName>;
 }
 
 function ImageSlider(props: Props) {
@@ -79,7 +76,7 @@ function ImageSlider(props: Props) {
               alt=""
               className="content-img"
               onClick={() => {
-                console.log("name: ", content.name);
+                // TODO: navigate to content
               }}
             />
           </SwiperSlide>

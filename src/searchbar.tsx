@@ -1,9 +1,10 @@
 import { useEffect, useState, Dispatch, SetStateAction, useRef } from "react";
 import "./searchbar.css";
 import getPosters from "../utils/getPosters";
+import { posterAndName } from "./types";
 interface Props {
-  updateMovies: Dispatch<SetStateAction<string[]>>;
-  updateTV: Dispatch<SetStateAction<string[]>>;
+  updateMovies: Dispatch<SetStateAction<posterAndName[]>>;
+  updateTV: Dispatch<SetStateAction<posterAndName[]>>;
 }
 
 function Searchbar(props: Props) {

@@ -31,7 +31,7 @@ function Navbar() {
       <div
         className="section-container"
         onClick={() => {
-          navigate("search");
+          navigate("/search");
         }}
       >
         <svg

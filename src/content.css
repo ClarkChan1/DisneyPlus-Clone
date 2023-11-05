@@ -1,3 +1,30 @@
-
+.content-container {
+  background-color: rgb(26, 29, 41);
+}
+.content-container .backdrop-container {
+  background-size: cover;
+  position: relative;
+}
+.content-container .backdrop-container .backdrop {
+  width: 100vw;
+}
+.content-container .backdrop-container .fade-effect {
+  position: absolute;
+  inset: 0px;
+  background-image: radial-gradient(farthest-side at 73% 21%, transparent, rgb(26, 29, 41));
+}
+.content-container .logo-and-description-container {
+  padding: 76px;
+  position: absolute;
+  font-size: 20px;
+  color: #f9f9f9;
+  top: 56px;
+}
+.content-container .logo-and-description-container .logo {
+  margin-top: 56px;
+  max-width: 341px;
+  min-width: 100px;
+  width: 35vw;
+}
 
 /*# sourceMappingURL=content.css.map */
