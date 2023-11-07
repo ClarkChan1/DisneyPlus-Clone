@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./main.css";
@@ -14,9 +14,20 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 );
 
 function Main() {
+  const [scrollY, updateScrollY] = useState<number>(0);
+  const handleScroll = () => {
+    const position = window.scrollY;
+    updateScrollY(position);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar scrollY={scrollY} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />

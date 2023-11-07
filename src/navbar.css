@@ -3,6 +3,10 @@
   gap: 40px;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 .nav-bar-container .logo {
   height: 50px;
@@ -44,6 +48,10 @@
 }
 .nav-bar-container .section-container:hover .section-title::after {
   transform: scale(1);
+}
+
+.scrolled {
+  background: #0e0b14;
 }
 
 /*# sourceMappingURL=navbar.css.map */

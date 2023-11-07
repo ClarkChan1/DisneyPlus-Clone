@@ -1,9 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import "./navbar.css";
-function Navbar() {
+interface Props {
+  scrollY: number;
+}
+function Navbar(props: Props) {
   const navigate = useNavigate();
   return (
-    <div className="nav-bar-container">
+    <div
+      className={"nav-bar-container " + (props.scrollY != 0 ? "scrolled" : "")}
+    >
       <img src="images/logo.png" alt="" className="logo" />
       <div
         className="section-container"

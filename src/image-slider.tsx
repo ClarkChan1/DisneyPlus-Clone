@@ -5,6 +5,7 @@ import { Swiper as SwiperType } from "swiper";
 import { useRef, useState } from "react";
 import "swiper/css";
 import { posterAndName } from "./types";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   content: Array<posterAndName>;
@@ -14,6 +15,7 @@ function ImageSlider(props: Props) {
   const swiperRef = useRef<SwiperType>();
   const [showPrevButton, updateShowPrevButton] = useState(true);
   const [showNextButton, updateShowNextButton] = useState(true);
+  const navigate = useNavigate();
   return (
     <div className="total-container">
       <div
@@ -77,6 +79,9 @@ function ImageSlider(props: Props) {
               className="content-img"
               onClick={() => {
                 // TODO: navigate to content
+                navigate("/content", {
+                  state: { id: content.id, contentType: content.contentType },
+                });
               }}
             />
           </SwiperSlide>

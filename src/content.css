@@ -1,9 +1,11 @@
 .content-container {
   background-color: rgb(26, 29, 41);
+  height: 120vh;
 }
 .content-container .backdrop-container {
   background-size: cover;
-  position: relative;
+  position: sticky;
+  top: 0;
 }
 .content-container .backdrop-container .backdrop {
   width: 100vw;
@@ -25,6 +27,11 @@
   max-width: 341px;
   min-width: 100px;
   width: 35vw;
+}
+
+html,
+body {
+  background: rgb(26, 29, 41);
 }
 
 /*# sourceMappingURL=content.css.map */
