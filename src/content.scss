@@ -2,12 +2,13 @@
 .content-container {
   background-color: rgb(26, 29, 41);
   height: 120vh;
+  margin-top: -$navbar-height;
   .backdrop-container {
     background-size: cover;
     position: sticky;
     top: 0;
     .backdrop {
-      width: 100vw;
+      width: 100%;
     }
     .fade-effect {
       position: absolute;
