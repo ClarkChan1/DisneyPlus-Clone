@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 interface Props {
   content: posterAndName[];
+  isSuggested?: boolean;
 }
 
 function ImageSlider(props: Props) {
@@ -78,10 +79,13 @@ function ImageSlider(props: Props) {
               alt=""
               className="content-img"
               onClick={() => {
-                // TODO: navigate to content
-                navigate("/content", {
-                  state: { id: content.id, contentType: content.contentType },
-                });
+                if (props.isSuggested) {
+                  //TODO: update params sent to route
+                } else {
+                  navigate("/content", {
+                    state: { id: content.id, contentType: content.contentType },
+                  });
+                }
               }}
             />
           </SwiperSlide>

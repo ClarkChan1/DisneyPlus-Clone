@@ -34,7 +34,6 @@ async function getContentInfo(id: number, contentType: string) {
   const contentInfoUrl = getContentInfoUrl(id, contentType);
   const contentResponse = await fetch(contentInfoUrl, fetch_options);
   const contentData = await contentResponse.json();
-  console.log("contentData: ", contentData);
   contentInfo.description = contentData.overview;
   contentInfo.backdrop_path =
     "http://image.tmdb.org/t/p/w500" + contentData.backdrop_path;
@@ -48,7 +47,6 @@ async function getContentInfo(id: number, contentType: string) {
       .file_path;
   //search genres TODO: cache this
   contentInfo.genres = contentData.genres.map((genre: Genre) => genre.name);
-  console.log("contentInfo: ", contentInfo);
   return contentInfo;
 }
 export default getContentInfo;

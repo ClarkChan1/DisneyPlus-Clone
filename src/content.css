@@ -10,6 +10,7 @@
   background-size: cover;
   position: sticky;
   top: 0;
+  width: 100%;
 }
 .content-container .backdrop-container .backdrop {
   width: 100%;
@@ -19,42 +20,44 @@
   inset: 0px;
   background-image: radial-gradient(farthest-side at 73% 21%, transparent, rgb(26, 29, 41));
 }
-.content-container .logo-and-description-container {
-  padding: 76px;
+.content-container .content-wrapper {
   position: absolute;
+  top: 56px;
+}
+.content-container .content-wrapper .logo-and-description-container {
+  padding: 76px;
   font-size: 20px;
   color: #f9f9f9;
-  top: 56px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   max-width: 874px;
 }
-.content-container .logo-and-description-container .description {
+.content-container .content-wrapper .logo-and-description-container .description {
   margin: 0;
   letter-spacing: -0.1px;
 }
-.content-container .logo-and-description-container .logo {
+.content-container .content-wrapper .logo-and-description-container .logo {
   max-width: 341px;
   min-width: 100px;
   width: 35vw;
 }
-.content-container .logo-and-description-container .genre-container {
+.content-container .content-wrapper .logo-and-description-container .genre-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   font-size: 14px;
 }
-.content-container .logo-and-description-container .genre-container p {
+.content-container .content-wrapper .logo-and-description-container .genre-container p {
   margin: 0;
 }
-.content-container .logo-and-description-container .buttons-container {
+.content-container .content-wrapper .logo-and-description-container .buttons-container {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
 }
-.content-container .logo-and-description-container .buttons-container .play-button {
+.content-container .content-wrapper .logo-and-description-container .buttons-container .play-button {
   color: rgb(26, 29, 41);
   border-radius: 4px;
   background: white;
@@ -64,21 +67,21 @@
   padding: 10px 20px;
   transition: 0.25s ease-out;
 }
-.content-container .logo-and-description-container .buttons-container .play-button .play-icon {
+.content-container .content-wrapper .logo-and-description-container .buttons-container .play-button .play-icon {
   height: 32px;
   width: 32px;
 }
-.content-container .logo-and-description-container .buttons-container .play-button p {
+.content-container .content-wrapper .logo-and-description-container .buttons-container .play-button p {
   font-family: "disney-font-bold";
   font-size: 15px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin: 0;
 }
-.content-container .logo-and-description-container .buttons-container .play-button:hover {
+.content-container .content-wrapper .logo-and-description-container .buttons-container .play-button:hover {
   background: rgba(249, 249, 249, 0.6);
 }
-.content-container .logo-and-description-container .buttons-container .watchlist-button {
+.content-container .content-wrapper .logo-and-description-container .buttons-container .watchlist-button {
   color: rgb(26, 29, 41);
   height: 25px;
   width: 25px;
@@ -89,20 +92,23 @@
   transition: 0.25s ease-out;
   cursor: pointer;
 }
-.content-container .logo-and-description-container .buttons-container .watchlist-button .button-icon {
+.content-container .content-wrapper .logo-and-description-container .buttons-container .watchlist-button .button-icon {
   height: auto;
   width: 72%;
   fill: white;
   transform: translate(18%, 10%);
   transition: 0.25s ease-out;
 }
-.content-container .logo-and-description-container .buttons-container .watchlist-button:hover {
+.content-container .content-wrapper .logo-and-description-container .buttons-container .watchlist-button:hover {
   background: white;
 }
-.content-container .logo-and-description-container .buttons-container .watchlist-button:hover .button-icon {
+.content-container .content-wrapper .logo-and-description-container .buttons-container .watchlist-button:hover .button-icon {
   fill: black;
 }
-.content-container .suggested-container p {
+.content-container .content-wrapper .suggested-container {
+  width: 100vw;
+}
+.content-container .content-wrapper .suggested-container p {
   margin: 0;
   padding: 0 76px;
 }

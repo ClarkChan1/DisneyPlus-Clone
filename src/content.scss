@@ -10,6 +10,7 @@
     background-size: cover;
     position: sticky;
     top: 0;
+    width: 100%;
     .backdrop {
       width: 100%;
     }
@@ -23,95 +24,99 @@
       );
     }
   }
-  .logo-and-description-container {
-    padding: $edge-padding;
-
+  .content-wrapper {
     position: absolute;
-    font-size: 20px;
-    color: #f9f9f9;
     top: 56px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    max-width: 874px;
-    .description {
-      margin: 0;
-      letter-spacing: -0.1px;
-    }
-    .logo {
-      // margin-top: 56px;
-      max-width: 341px;
-      min-width: 100px;
-      width: 35vw;
-    }
-    .genre-container {
+
+    .logo-and-description-container {
+      padding: $edge-padding;
+
+      font-size: 20px;
+      color: #f9f9f9;
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 14px;
-      p {
+      flex-direction: column;
+      gap: 30px;
+      max-width: 874px;
+      .description {
         margin: 0;
+        letter-spacing: -0.1px;
       }
-    }
-    .buttons-container {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      .play-button {
-        color: rgb(26, 29, 41);
-        border-radius: 4px;
-        background: white;
+      .logo {
+        // margin-top: 56px;
+        max-width: 341px;
+        min-width: 100px;
+        width: 35vw;
+      }
+      .genre-container {
         display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 10px 20px;
-        transition: 0.25s ease-out;
-        .play-icon {
-          height: 32px;
-          width: 32px;
-        }
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 14px;
         p {
-          font-family: "disney-font-bold";
-          font-size: 15px;
-          letter-spacing: 1.5px;
-          text-transform: uppercase;
           margin: 0;
         }
       }
-      .play-button:hover {
-        background: #f9f9f999;
-      }
-      .watchlist-button {
-        color: rgb(26, 29, 41);
-        height: 25px;
-        width: 25px;
-        padding: 10px;
-        border-radius: 50%;
-        border: 2px solid #f9f9f9;
-        background: black;
-        transition: 0.25s ease-out;
-        cursor: pointer;
-        .button-icon {
-          height: auto;
-          width: 72%;
-          fill: white;
-          transform: translate(18%, 10%);
+      .buttons-container {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        .play-button {
+          color: rgb(26, 29, 41);
+          border-radius: 4px;
+          background: white;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 10px 20px;
           transition: 0.25s ease-out;
+          .play-icon {
+            height: 32px;
+            width: 32px;
+          }
+          p {
+            font-family: "disney-font-bold";
+            font-size: 15px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin: 0;
+          }
+        }
+        .play-button:hover {
+          background: #f9f9f999;
+        }
+        .watchlist-button {
+          color: rgb(26, 29, 41);
+          height: 25px;
+          width: 25px;
+          padding: 10px;
+          border-radius: 50%;
+          border: 2px solid #f9f9f9;
+          background: black;
+          transition: 0.25s ease-out;
+          cursor: pointer;
+          .button-icon {
+            height: auto;
+            width: 72%;
+            fill: white;
+            transform: translate(18%, 10%);
+            transition: 0.25s ease-out;
+          }
+        }
+        .watchlist-button:hover {
+          background: white;
+        }
+        .watchlist-button:hover .button-icon {
+          fill: black;
         }
       }
-      .watchlist-button:hover {
-        background: white;
-      }
-      .watchlist-button:hover .button-icon {
-        fill: black;
-      }
     }
-  }
-  .suggested-container {
-    p {
-      margin: 0;
-      padding: 0 $edge-padding;
+    .suggested-container {
+      width: 100vw;
+      p {
+        margin: 0;
+        padding: 0 $edge-padding;
+      }
     }
   }
 }
