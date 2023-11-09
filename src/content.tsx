@@ -72,6 +72,7 @@ function Content() {
         </div>
         <div className="suggested-container">
           <p>Suggested</p>
+          <div className="line-break"></div>
           <ImageSlider content={similarImages} isSuggested={true} />
         </div>
       </div>

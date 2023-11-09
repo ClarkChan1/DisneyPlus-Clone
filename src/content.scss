@@ -112,10 +112,20 @@
       }
     }
     .suggested-container {
-      width: 100vw;
+      width: 90vw;
       p {
         margin: 0;
         padding: 0 $edge-padding;
+        color: #f9f9f9;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .line-break {
+        height: 2px;
+        background: grey;
+        margin: 20px $edge-padding;
+        margin-right: 0px;
       }
     }
   }

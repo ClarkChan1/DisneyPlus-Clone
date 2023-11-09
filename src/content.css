@@ -106,11 +106,21 @@
   fill: black;
 }
 .content-container .content-wrapper .suggested-container {
-  width: 100vw;
+  width: 90vw;
 }
 .content-container .content-wrapper .suggested-container p {
   margin: 0;
   padding: 0 76px;
+  color: #f9f9f9;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.content-container .content-wrapper .suggested-container .line-break {
+  height: 2px;
+  background: grey;
+  margin: 20px 76px;
+  margin-right: 0px;
 }
 
 html,

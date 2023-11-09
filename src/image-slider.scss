@@ -29,8 +29,8 @@
     0px 25px 14px -14px rgba(0, 0, 0, 0.5);
   width: 100%;
   height: auto;
-  //   aspect-ratio: 400 / 225;
-  aspect-ratio: 500 / 750;
+  // aspect-ratio: 400 / 225;
+  aspect-ratio: $image-aspect-ratio;
   border-radius: 8px;
   user-select: none;
   cursor: pointer;
