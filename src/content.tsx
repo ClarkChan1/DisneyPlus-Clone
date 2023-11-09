@@ -1,16 +1,27 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import getContentInfo from "../utils/getContentInfo";
+import getPosters from "../utils/getPosters";
 import { contentInfo } from "./types";
+import { posterAndName } from "./types";
+import ImageSlider from "./image-slider";
 import "./content.css";
 
 function Content() {
   const location = useLocation();
   const [contentInfo, updateContentInfo] = useState<contentInfo>();
+  const [similarImages, updateSimilarImages] = useState<posterAndName[]>([]);
   useEffect(() => {
     async function getData() {
       updateContentInfo(
         await getContentInfo(location.state.id, location.state.contentType)
+      );
+      updateSimilarImages(
+        await getPosters(
+          "similar",
+          location.state.contentType,
+          "" + location.state.id
+        )
       );
     }
     getData();
@@ -25,7 +36,7 @@ function Content() {
         <img className="logo" src={contentInfo?.logo_path} alt="" />
         <div className="genre-container">
           {contentInfo?.genres.map((genre) => (
-            <p>{genre}</p>
+            <p key={genre}>{genre}</p>
           ))}
         </div>
         <div className="buttons-container">
@@ -57,6 +68,10 @@ function Content() {
           </div>
         </div>
         <p className="description">{contentInfo?.description}</p>
+      </div>
+      <div className="suggested-container">
+        <p>Suggested</p>
+        <ImageSlider content={similarImages} />
       </div>
     </div>
   );

@@ -33,6 +33,12 @@ async function getPosterUrl(
     } else if (contentType == "tv") {
       return `https://api.themoviedb.org/3/search/tv?query=${query}&include_adult=false&language=en-US&page=1`;
     }
+  } else if (searchType == "similar") {
+    if (contentType == "movie") {
+      return `https://api.themoviedb.org/3/movie/${query}/recommendations?language=en-US&page=1`;
+    } else if (contentType == "tv") {
+      return `https://api.themoviedb.org/3/tv/${query}/recommendations?language=en-US&page=1`;
+    }
   }
   return "in getPosterUrl\nerror: url not found";
 }
@@ -46,6 +52,7 @@ async function getPosters(
   const data = await response.json();
   const content = data.results
     .filter((content: any) => content.poster_path) // filter null values
+    .filter((content: any) => content.original_language == "en")
     .map((content: { poster_path: string; id: number }) => ({
       poster_path: "http://image.tmdb.org/t/p/w500" + content.poster_path,
       id: content.id,

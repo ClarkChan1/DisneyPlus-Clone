@@ -6,14 +6,12 @@ import { posterAndName } from "./types";
 
 function Home() {
   const [disneyChannelImages, updateDisneyChannelImages] = useState<
-    Array<posterAndName>
+    posterAndName[]
   >([]);
   const [disneyMovieImages, updateDisneyMovieImages] = useState<
-    Array<posterAndName>
+    posterAndName[]
   >([]);
-  const [starWarsImages, updateStarWarsImages] = useState<Array<posterAndName>>(
-    []
-  );
+  const [starWarsImages, updateStarWarsImages] = useState<posterAndName[]>([]);
   useEffect(() => {
     async function getData() {
       updateDisneyChannelImages(

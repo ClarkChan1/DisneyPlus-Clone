@@ -8,7 +8,7 @@ import { posterAndName } from "./types";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
-  content: Array<posterAndName>;
+  content: posterAndName[];
 }
 
 function ImageSlider(props: Props) {

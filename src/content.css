@@ -4,7 +4,6 @@
 }
 .content-container {
   background-color: rgb(26, 29, 41);
-  height: 120vh;
   margin-top: -70px;
 }
 .content-container .backdrop-container {
@@ -102,6 +101,10 @@
 }
 .content-container .logo-and-description-container .buttons-container .watchlist-button:hover .button-icon {
   fill: black;
+}
+.content-container .suggested-container p {
+  margin: 0;
+  padding: 0 76px;
 }
 
 html,
