@@ -8,4 +8,5 @@ export interface contentInfo {
   logo_path: string;
   backdrop_path: string;
   description: string;
+  genres: string[];
 }

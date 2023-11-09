@@ -23,6 +23,11 @@ function Content() {
       </div>
       <div className="logo-and-description-container">
         <img className="logo" src={contentInfo?.logo_path} alt="" />
+        <div className="genre-container">
+          {contentInfo?.genres.map((genre) => (
+            <p>{genre}</p>
+          ))}
+        </div>
         <div className="buttons-container">
           <div className="play-button">
             <svg
@@ -51,7 +56,7 @@ function Content() {
             </svg>
           </div>
         </div>
-        <p>{contentInfo?.description}</p>
+        <p className="description">{contentInfo?.description}</p>
       </div>
     </div>
   );
