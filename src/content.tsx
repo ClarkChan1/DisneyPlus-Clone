@@ -6,7 +6,6 @@ import { contentInfo } from "./types";
 import { posterAndName } from "./types";
 import ImageSlider from "./image-slider";
 import "./content.css";
-
 function Content() {
   const location = useLocation();
   const [contentInfo, updateContentInfo] = useState<contentInfo>();
@@ -25,7 +24,8 @@ function Content() {
       );
     }
     getData();
-  }, []);
+    console.log("state: ", location.state.id, location.state.contentType);
+  }, [location]);
   return (
     <div className="content-container">
       <div className="backdrop-container">
@@ -73,7 +73,7 @@ function Content() {
         <div className="suggested-container">
           <p>Suggested</p>
           <div className="line-break"></div>
-          <ImageSlider content={similarImages} isSuggested={true} />
+          <ImageSlider content={similarImages} />
         </div>
       </div>
     </div>
