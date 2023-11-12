@@ -51,8 +51,8 @@ async function getPosters(
   const response = await fetch(url, fetch_options);
   const data = await response.json();
   const content = data.results
-    .filter((content: any) => content.poster_path) // filter null values
     .filter((content: any) => content.original_language == "en")
+    .filter((content: any) => content.poster_path) // filter null values
     .map((content: { poster_path: string; id: number }) => ({
       poster_path: "http://image.tmdb.org/t/p/w500" + content.poster_path,
       id: content.id,
