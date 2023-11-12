@@ -3,34 +3,71 @@ import "./home.css";
 import getPosters from "../utils/getPosters";
 import { posterAndName } from "./types";
 import ContentRow from "./contentRow";
+
+const contentQueries = [
+  {
+    searchType: "discover",
+    contentType: "tv",
+    query: "Disney Television Animation",
+  },
+  {
+    searchType: "discover",
+    contentType: "movie",
+    query: "Walt Disney Animation Studios",
+  },
+  {
+    searchType: "discover",
+    contentType: "movie",
+    query: "Marvel Studios",
+  },
+  {
+    searchType: "discover",
+    contentType: "movie",
+    query: "Pixar",
+  },
+  {
+    searchType: "search",
+    contentType: "movie",
+    query: "Star Wars",
+  },
+];
+
+interface titleAndImages {
+  title: string;
+  images: posterAndName[];
+}
+
 function Home() {
-  const [disneyChannelImages, updateDisneyChannelImages] = useState<
-    posterAndName[]
+  const [contentTitleAndImages, updateContentTitleAndImages] = useState<
+    titleAndImages[]
   >([]);
-  const [disneyMovieImages, updateDisneyMovieImages] = useState<
-    posterAndName[]
-  >([]);
-  const [starWarsImages, updateStarWarsImages] = useState<posterAndName[]>([]);
   useEffect(() => {
     async function getData() {
-      updateDisneyChannelImages(
-        await getPosters("discover", "tv", "Disney Television Animation")
-      );
-      updateDisneyMovieImages(
-        await getPosters("discover", "movie", "Walt Disney Animation Studios")
-      );
-      updateStarWarsImages(await getPosters("search", "movie", "star wars"));
+      let updatedContent: titleAndImages[] = [];
+      for (const contentQuery of contentQueries) {
+        let contentImages = await getPosters(
+          contentQuery.searchType,
+          contentQuery.contentType,
+          contentQuery.query
+        );
+        updatedContent.push({
+          title: contentQuery.query,
+          images: contentImages,
+        });
+      }
+      updateContentTitleAndImages(updatedContent);
     }
     getData();
   }, []);
   return (
     <div className="home-container">
-      <ContentRow title="Disney Channel" content={disneyChannelImages} />
-      <ContentRow
-        title="Walt Disney Animation Studios"
-        content={disneyMovieImages}
-      />
-      <ContentRow title="Star Wars" content={starWarsImages} />
+      {contentTitleAndImages.map((entry) => (
+        <ContentRow
+          key={entry.title}
+          title={entry.title}
+          content={entry.images}
+        />
+      ))}
     </div>
   );
 }
