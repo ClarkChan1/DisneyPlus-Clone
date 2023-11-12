@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./search.css";
 import Searchbar from "./searchbar";
-import ContentGrid from "./searchgrid";
+import ContentGrid from "./contentGrid";
 import { posterAndName } from "./types";
 function Search() {
   const [movies, updateMovies] = useState<posterAndName[]>([]);

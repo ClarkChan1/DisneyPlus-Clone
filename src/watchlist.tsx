@@ -1,5 +1,5 @@
 import "./watchlist.css";
-import ContentGrid from "./searchgrid";
+import ContentGrid from "./contentGrid";
 function WatchList() {
   return <div className="watch-list-container">{/* <ContentGrid /> */}</div>;
 }

@@ -10,3 +10,15 @@ export interface contentInfo {
   description: string;
   genres: string[];
 }
+
+export interface ContentQuery {
+  searchType: string;
+  contentType: string;
+  query: string;
+  title?: string;
+}
+
+export interface titleAndImages {
+  title: string;
+  images: posterAndName[];
+}

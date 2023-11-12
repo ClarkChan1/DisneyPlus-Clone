@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./searchgrid.css";
+import "./contentGrid.css";
 import { useNavigate } from "react-router-dom";
 import { posterAndName } from "./types";
 interface Props {

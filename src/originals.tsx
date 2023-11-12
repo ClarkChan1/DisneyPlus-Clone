@@ -1,15 +1,14 @@
-import { useEffect, useState } from "react";
-import "./home.css";
-import getPosters from "../utils/getPosters";
-import { titleAndImages, ContentQuery } from "./types";
+import "./originals.css";
 import ContentRow from "./contentRow";
+import { ContentQuery, titleAndImages } from "./types";
+import { useEffect, useState } from "react";
+import getPosters from "../utils/getPosters";
 
 const contentQueries: ContentQuery[] = [
   {
     searchType: "discover",
-    contentType: "tv",
-    query: "Disney Television Animation",
-    title: "Disney Channel",
+    contentType: "movie",
+    query: "Disney",
   },
   {
     searchType: "discover",
@@ -19,21 +18,11 @@ const contentQueries: ContentQuery[] = [
   {
     searchType: "discover",
     contentType: "movie",
-    query: "Marvel Studios",
-  },
-  {
-    searchType: "discover",
-    contentType: "movie",
-    query: "Pixar",
-  },
-  {
-    searchType: "search",
-    contentType: "movie",
-    query: "Star Wars",
+    query: "DisneyToon Studios",
   },
 ];
 
-function Home() {
+function Originals() {
   const [contentTitleAndImages, updateContentTitleAndImages] = useState<
     titleAndImages[]
   >([]);
@@ -56,7 +45,7 @@ function Home() {
     getData();
   }, []);
   return (
-    <div className="home-container">
+    <div className="originals-container">
       {contentTitleAndImages.map((entry) => (
         <ContentRow
           key={entry.title}
@@ -67,4 +56,4 @@ function Home() {
     </div>
   );
 }
-export default Home;
+export default Originals;
