@@ -17,7 +17,7 @@ function ImageSlider(props: Props) {
   const [showNextButton, updateShowNextButton] = useState(true);
   const navigate = useNavigate();
   return (
-    <div className="total-container">
+    <div className="image-slider-container">
       <div
         className={"nav-button " + (showPrevButton ? "" : "hide")}
         onClick={() => {
@@ -92,7 +92,6 @@ function ImageSlider(props: Props) {
           const currIndex = swiperRef.current?.realIndex || 0;
           const rowLength = swiperRef.current?.slidesPerViewDynamic() || 2;
           swiperRef.current?.slideTo(currIndex + Math.trunc(rowLength));
-          //   swiperRef.current?.slideTo(currIndex + 1);
         }}
       >
         <svg

@@ -7,7 +7,7 @@ interface Props {
   tv: posterAndName[];
 }
 
-function SearchGrid(props: Props) {
+function ContentGrid(props: Props) {
   const [media, updateMedia] = useState<posterAndName[]>([]);
   const navigate = useNavigate();
   useEffect(() => {
@@ -31,4 +31,4 @@ function SearchGrid(props: Props) {
     </div>
   );
 }
-export default SearchGrid;
+export default ContentGrid;

@@ -1,23 +1,23 @@
-.total-container {
+.image-slider-container {
   display: flex;
   align-items: stretch;
 }
-.total-container .swiper-container {
+.image-slider-container .swiper-container {
   padding: 20px;
 }
-.total-container .nav-button {
+.image-slider-container .nav-button {
   display: flex;
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
   cursor: pointer;
 }
-.total-container .nav-button .arrow-icon {
+.image-slider-container .nav-button .arrow-icon {
   height: 36px;
   width: 36px;
   fill: white;
 }
-.total-container .hide {
+.image-slider-container .hide {
   opacity: 0;
   pointer-events: none;
 }

@@ -5,8 +5,8 @@ import getPosters from "../utils/getPosters";
 import { contentInfo } from "./types";
 import { posterAndName } from "./types";
 import ImageSlider from "./image-slider";
-import "./content.css";
-function Content() {
+import "./contentPage.css";
+function ContentPage() {
   const location = useLocation();
   const [contentInfo, updateContentInfo] = useState<contentInfo>();
   const [similarImages, updateSimilarImages] = useState<posterAndName[]>([]);
@@ -79,4 +79,4 @@ function Content() {
     </div>
   );
 }
-export default Content;
+export default ContentPage;

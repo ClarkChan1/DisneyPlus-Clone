@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import "./home.css";
-import ImageSlider from "./image-slider";
 import getPosters from "../utils/getPosters";
 import { posterAndName } from "./types";
-
+import ContentRow from "./contentRow";
 function Home() {
   const [disneyChannelImages, updateDisneyChannelImages] = useState<
     posterAndName[]
@@ -26,18 +25,12 @@ function Home() {
   }, []);
   return (
     <div className="home-container">
-      <div className="row-container">
-        <p className="section-title">Disney Channel</p>
-        <ImageSlider content={disneyChannelImages}></ImageSlider>
-      </div>
-      <div className="row-container">
-        <p className="section-title">Walt Disney Animation Studios</p>
-        <ImageSlider content={disneyMovieImages}></ImageSlider>
-      </div>
-      <div className="row-container">
-        <p className="section-title">Star Wars</p>
-        <ImageSlider content={starWarsImages}></ImageSlider>
-      </div>
+      <ContentRow title="Disney Channel" content={disneyChannelImages} />
+      <ContentRow
+        title="Walt Disney Animation Studios"
+        content={disneyMovieImages}
+      />
+      <ContentRow title="Star Wars" content={starWarsImages} />
     </div>
   );
 }

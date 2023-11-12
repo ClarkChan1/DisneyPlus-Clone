@@ -1,0 +1,9 @@
+@import "./globals.scss";
+.content-row-container {
+  .section-title {
+    font-size: 20px;
+    user-select: none;
+    padding-left: $edge-padding;
+    margin-bottom: 0;
+  }
+}
