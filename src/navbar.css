@@ -80,7 +80,6 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  align-items: center;
   animation: slidein 0.1s forwards;
 }
 
@@ -93,7 +92,7 @@
     height: 0;
   }
   to {
-    height: 100%;
+    height: auto;
   }
 }
 

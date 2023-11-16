@@ -1,8 +1,5 @@
 @import "./globals.scss";
-@font-face {
-  font-family: "disney-font-bold";
-  src: url("../fonts/disney-font-bold.woff2");
-}
+
 .content-container {
   background-color: rgb(26, 29, 41);
   margin-top: -$navbar-height;
