@@ -1,6 +1,4 @@
 .nav-bar-container {
-  display: flex;
-  gap: 40px;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   position: sticky;
@@ -8,33 +6,39 @@
   left: 0;
   z-index: 999;
   transition: 0.25s ease-out;
+  display: flex;
+  justify-content: space-between;
 }
-.nav-bar-container .logo {
+.nav-bar-container .nav-bar-sections {
+  display: flex;
+  gap: 40px;
+}
+.nav-bar-container .nav-bar-sections .logo {
   height: 50px;
   padding: 10px;
 }
-.nav-bar-container .section-container {
+.nav-bar-container .nav-bar-sections .section-container {
   display: flex;
   align-items: center;
   gap: 4px;
   cursor: pointer;
 }
-.nav-bar-container .section-container .section-icon {
+.nav-bar-container .nav-bar-sections .section-container .section-icon {
   height: 24px;
   width: 24px;
   fill: white;
 }
-.nav-bar-container .section-container .plus-icon {
+.nav-bar-container .nav-bar-sections .section-container .plus-icon {
   height: 14px;
   width: 14px;
   padding-left: 4px;
   padding-right: 4px;
 }
-.nav-bar-container .section-container .section-title {
+.nav-bar-container .nav-bar-sections .section-container .section-title {
   position: relative;
   text-decoration: none;
 }
-.nav-bar-container .section-container .section-title::after {
+.nav-bar-container .nav-bar-sections .section-container .section-title::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -47,12 +51,50 @@
   transition: transform 0.25s ease-out;
   transform: scale(0);
 }
-.nav-bar-container .section-container:hover .section-title::after {
+.nav-bar-container .nav-bar-sections .section-container:hover .section-title::after {
   transform: scale(1);
+}
+.nav-bar-container .profile-container {
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 50%;
+  background: orange;
+  z-index: 2;
+  position: relative;
+}
+.nav-bar-container .dropdown {
+  width: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  padding-top: 70px;
+  background: wheat;
+  display: none;
+  z-index: 1;
+}
+.nav-bar-container .profile-container:hover ~ .dropdown,
+.nav-bar-container .dropdown:hover {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  animation: slidein 0.1s forwards;
 }
 
 .scrolled {
   background: #0e0b14;
+}
+
+@keyframes slidein {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
 }
 
 /*# sourceMappingURL=navbar.css.map */

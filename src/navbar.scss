@@ -1,7 +1,5 @@
 @import "./globals.scss";
 .nav-bar-container {
-  display: flex;
-  gap: 40px;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   position: sticky;
@@ -9,48 +7,92 @@
   left: 0;
   z-index: 999;
   transition: 0.25s ease-out;
-  .logo {
-    height: 50px;
-    padding: 10px;
-  }
-  .section-container {
+  display: flex;
+  justify-content: space-between;
+  .nav-bar-sections {
     display: flex;
-    align-items: center;
-    gap: 4px;
-    cursor: pointer;
-    .section-icon {
-      height: 24px;
-      width: 24px;
-      fill: white;
+    gap: 40px;
+    .logo {
+      height: 50px;
+      padding: 10px;
     }
-    .plus-icon {
-      height: 14px;
-      width: 14px;
-      padding-left: 4px;
-      padding-right: 4px;
+    .section-container {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      .section-icon {
+        height: 24px;
+        width: 24px;
+        fill: white;
+      }
+      .plus-icon {
+        height: 14px;
+        width: 14px;
+        padding-left: 4px;
+        padding-right: 4px;
+      }
+      .section-title {
+        position: relative;
+        text-decoration: none;
+      }
+      .section-title::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: white;
+        transform-origin: left;
+        transition: transform 0.25s ease-out;
+        transform: scale(0);
+      }
     }
-    .section-title {
-      position: relative;
-      text-decoration: none;
-    }
-    .section-title::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      border-radius: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: white;
-      transform-origin: left;
-      transition: transform 0.25s ease-out;
-      transform: scale(0);
+    .section-container:hover .section-title::after {
+      transform: scale(1);
     }
   }
-  .section-container:hover .section-title::after {
-    transform: scale(1);
+  .profile-container {
+    height: 50px;
+    width: 50px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border-radius: 50%;
+    background: orange;
+    z-index: 2;
+    position: relative;
+  }
+  .dropdown {
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    padding-top: 70px;
+    background: wheat;
+    display: none;
+    z-index: 1;
+  }
+  .profile-container:hover ~ .dropdown,
+  .dropdown:hover {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    animation: slidein 0.1s forwards;
   }
 }
 .scrolled {
   background: #0e0b14;
+}
+
+@keyframes slidein {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
 }
