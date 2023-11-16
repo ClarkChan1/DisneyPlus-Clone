@@ -9,6 +9,7 @@ import Search from "./search";
 import ContentPage from "./contentPage";
 import Originals from "./originals";
 import LoginPage from "./loginPage";
+import SignupPage from "./signupPage";
 import { initializeFirebase, auth } from "../utils/firebase";
 import ProtectedRoute from "./protectedRoute";
 
@@ -38,18 +39,22 @@ function Main() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         updateUser(user);
-        console.log("user: ", user);
+        console.log("user updated in useEffect: ", user);
       }
     });
   }, []);
 
   return (
     <BrowserRouter>
-      {user != undefined ? <Navbar scrollY={scrollY} /> : null}
+      {user ? <Navbar scrollY={scrollY} /> : null}
       <Routes>
         <Route
           path="/"
-          element={user != undefined ? <Home /> : <Navigate to="/login" />}
+          element={
+            <ProtectedRoute user={user}>
+              <Home />
+            </ProtectedRoute>
+          }
         />
         <Route
           path="/search"
@@ -76,6 +81,7 @@ function Main() {
           }
         />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
       </Routes>
     </BrowserRouter>
   );

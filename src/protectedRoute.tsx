@@ -6,10 +6,10 @@ interface Props {
   user: User | undefined;
 }
 function ProtectedRoute(props: PropsWithChildren<Props>) {
-  if (props.user == undefined) {
-    // user is not authenticated
-    return <Navigate to="/login" />;
+  if (props.user != undefined) {
+    // user is authenticated
+    return props.children;
   }
-  return props.children;
+  return <Navigate to="/login" />;
 }
 export default ProtectedRoute;
