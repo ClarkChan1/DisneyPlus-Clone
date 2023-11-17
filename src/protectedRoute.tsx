@@ -3,10 +3,10 @@ import { User } from "firebase/auth";
 import { PropsWithChildren } from "react";
 
 interface Props {
-  user: User | undefined;
+  user: boolean | undefined;
 }
 function ProtectedRoute(props: PropsWithChildren<Props>) {
-  if (props.user != undefined) {
+  if (props.user == true) {
     // user is authenticated
     return props.children;
   }

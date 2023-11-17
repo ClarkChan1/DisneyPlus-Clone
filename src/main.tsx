@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useNavigate,
+  Navigate,
+} from "react-router-dom";
 import { onAuthStateChanged, User } from "firebase/auth";
 import "./main.css";
 import Navbar from "./navbar";
@@ -22,13 +28,24 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 );
 
 function Main() {
-  const [user, updateUser] = useState<User>();
+  const [user, updateUser] = useState<boolean | undefined>(undefined);
+  const [isLoadingAuth, updateIsLoadingAuth] = useState(true);
   const [scrollY, updateScrollY] = useState<number>(0);
 
   const handleScroll = () => {
     const position = window.scrollY;
     updateScrollY(position);
   };
+
+  onAuthStateChanged(auth, async (user) => {
+    console.log("authstatechanged: ", user);
+    if (user) {
+      updateUser(true);
+    } else {
+      // not logged in
+      updateUser(false);
+    }
+  });
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -38,12 +55,14 @@ function Main() {
   }, []);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      updateUser(user || undefined);
-    });
-  }, []);
+    console.log("updateUser was fired, ", user);
+    // when user has changed, then onAuthStateChanged has fired and completed
+    if (user != undefined) updateIsLoadingAuth(false);
+  }, [user]);
 
-  return (
+  return isLoadingAuth ? (
+    <div className="loading-div">loading...</div>
+  ) : (
     <BrowserRouter>
       {user ? <Navbar scrollY={scrollY} /> : null}
       <Routes>
