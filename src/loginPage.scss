@@ -17,7 +17,7 @@ body {
     height: auto;
     width: 200px;
   }
-  .signup-form {
+  .login-form {
     color: black;
     display: flex;
     flex-direction: column;
@@ -61,7 +61,11 @@ body {
     .errorInput:focus::placeholder {
       color: grey;
     }
-    .signup-button {
+    .login-error {
+      margin-top: 0;
+      color: rgb(186, 40, 40);
+    }
+    .login-button {
       color: white;
       background: rgb(0, 88, 225);
       border: none;

@@ -7,7 +7,7 @@ body {
   color: white;
 }
 
-.login-wrapper {
+.signup-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +17,7 @@ body {
     height: auto;
     width: 200px;
   }
-  .login-container {
+  .signup-form {
     color: black;
     display: flex;
     flex-direction: column;
@@ -52,7 +52,15 @@ body {
     .inputBox::placeholder {
       color: grey;
     }
-    .login-button,
+    .errorInput {
+      box-shadow: 0px 2px rgb(186, 40, 40);
+    }
+    .errorInput::placeholder {
+      color: rgb(186, 40, 40);
+    }
+    .errorInput:focus::placeholder {
+      color: grey;
+    }
     .signup-button {
       color: white;
       background: rgb(0, 88, 225);

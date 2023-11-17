@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { onAuthStateChanged, User } from "firebase/auth";
 import "./main.css";
 import Navbar from "./navbar";
@@ -24,10 +24,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 function Main() {
   const [user, updateUser] = useState<User>();
   const [scrollY, updateScrollY] = useState<number>(0);
+
   const handleScroll = () => {
     const position = window.scrollY;
     updateScrollY(position);
   };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
@@ -37,10 +39,7 @@ function Main() {
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        updateUser(user);
-        console.log("user updated in useEffect: ", user);
-      }
+      updateUser(user || undefined);
     });
   }, []);
 

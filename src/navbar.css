@@ -72,9 +72,14 @@
   right: 0;
   padding: 20px;
   padding-top: 70px;
-  background: wheat;
+  background: rgb(19, 19, 19);
+  border: 1px solid rgba(151, 151, 151, 0.34);
   display: none;
   z-index: 1;
+  color: rgb(202, 202, 202);
+}
+.nav-bar-container .dropdown p {
+  cursor: pointer;
 }
 .nav-bar-container .profile-container:hover ~ .dropdown,
 .nav-bar-container .dropdown:hover {

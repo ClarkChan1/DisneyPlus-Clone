@@ -17,7 +17,7 @@ body {
   height: auto;
   width: 200px;
 }
-.login-wrapper .signup-form {
+.login-wrapper .login-form {
   color: black;
   display: flex;
   flex-direction: column;
@@ -29,15 +29,15 @@ body {
   width: 70vw;
   max-width: 580px;
 }
-.login-wrapper .signup-form p {
+.login-wrapper .login-form p {
   letter-spacing: 1px;
 }
-.login-wrapper .signup-form .page-title {
+.login-wrapper .login-form .page-title {
   margin: 0;
   font-size: 24px;
   text-align: center;
 }
-.login-wrapper .signup-form .inputBox {
+.login-wrapper .login-form .inputBox {
   border: none;
   background: rgb(232, 240, 254);
   padding: 26px 16px 10px;
@@ -46,23 +46,27 @@ body {
   font-family: disney-font;
   letter-spacing: 1px;
 }
-.login-wrapper .signup-form .inputBox:focus {
+.login-wrapper .login-form .inputBox:focus {
   outline: none;
   box-shadow: 0px 2px black;
 }
-.login-wrapper .signup-form .inputBox::placeholder {
+.login-wrapper .login-form .inputBox::placeholder {
   color: grey;
 }
-.login-wrapper .signup-form .errorInput {
+.login-wrapper .login-form .errorInput {
   box-shadow: 0px 2px rgb(186, 40, 40);
 }
-.login-wrapper .signup-form .errorInput::placeholder {
+.login-wrapper .login-form .errorInput::placeholder {
   color: rgb(186, 40, 40);
 }
-.login-wrapper .signup-form .errorInput:focus::placeholder {
+.login-wrapper .login-form .errorInput:focus::placeholder {
   color: grey;
 }
-.login-wrapper .signup-form .signup-button {
+.login-wrapper .login-form .login-error {
+  margin-top: 0;
+  color: rgb(186, 40, 40);
+}
+.login-wrapper .login-form .login-button {
   color: white;
   background: rgb(0, 88, 225);
   border: none;
@@ -72,7 +76,7 @@ body {
   letter-spacing: 1px;
   cursor: pointer;
 }
-.login-wrapper .signup-form button:hover {
+.login-wrapper .login-form button:hover {
   background: rgb(6, 130, 240);
 }
 

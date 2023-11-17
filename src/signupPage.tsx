@@ -27,7 +27,7 @@ function SignupPage() {
     }
   }
   return (
-    <div className="login-wrapper">
+    <div className="signup-wrapper">
       <img src="images/logo.png" alt="" className="logo" />
 
       <div className="signup-form">

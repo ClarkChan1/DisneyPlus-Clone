@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   Auth,
   createUserWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 
 const firebaseConfig = {
@@ -27,15 +28,15 @@ export function initializeFirebase() {
 }
 
 export async function createNewUser(email: string, pass: string) {
-  const newUser = await createUserWithEmailAndPassword(auth, email, pass);
-  console.log("new user: ", newUser);
+  await createUserWithEmailAndPassword(auth, email, pass);
 }
 
-export const testLogin = async () => {
-  const email = "blah@blah.test";
-  const pass = "password";
-  const creds = await signInWithEmailAndPassword(auth, email, pass);
-  console.log("creds: ", creds);
-};
+export async function loginUser(email: string, pass: string) {
+  await signInWithEmailAndPassword(auth, email, pass);
+}
+
+export async function signOutUser() {
+  await signOut(auth);
+}
 
 export { myApp, auth };
