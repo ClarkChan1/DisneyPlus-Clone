@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { signOutUser } from "../utils/firebase";
 import "./navbar.css";
 interface Props {
   scrollY: number;
@@ -139,7 +138,7 @@ function Navbar(props: Props) {
       <div className="profile-container"></div>
       <div className="dropdown">
         <p>Edit Profile</p>
-        <p onClick={signOutUser}>Sign Out</p>
+        {/* <p onClick={signOutUser}>Sign Out</p> */}
       </div>
     </div>
   );

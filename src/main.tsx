@@ -1,25 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useNavigate,
-  Navigate,
-} from "react-router-dom";
-import { onAuthStateChanged, User } from "firebase/auth";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./main.css";
 import Navbar from "./navbar";
 import Home from "./home";
 import Search from "./search";
 import ContentPage from "./contentPage";
 import Originals from "./originals";
-import LoginPage from "./loginPage";
-import SignupPage from "./signupPage";
-import { initializeFirebase, auth } from "../utils/firebase";
-import ProtectedRoute from "./protectedRoute";
-
-initializeFirebase();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -28,24 +15,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 );
 
 function Main() {
-  const [user, updateUser] = useState<boolean | undefined>(undefined);
-  const [isLoadingAuth, updateIsLoadingAuth] = useState(true);
   const [scrollY, updateScrollY] = useState<number>(0);
 
   const handleScroll = () => {
     const position = window.scrollY;
     updateScrollY(position);
   };
-
-  onAuthStateChanged(auth, async (user) => {
-    console.log("authstatechanged: ", user);
-    if (user) {
-      updateUser(true);
-    } else {
-      // not logged in
-      updateUser(false);
-    }
-  });
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -54,52 +29,14 @@ function Main() {
     };
   }, []);
 
-  useEffect(() => {
-    console.log("updateUser was fired, ", user);
-    // when user has changed, then onAuthStateChanged has fired and completed
-    if (user != undefined) updateIsLoadingAuth(false);
-  }, [user]);
-
-  return isLoadingAuth ? (
-    <div className="loading-div">loading...</div>
-  ) : (
+  return (
     <BrowserRouter>
-      {user ? <Navbar scrollY={scrollY} /> : null}
+      <Navbar scrollY={scrollY} />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute user={user}>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/search"
-          element={
-            <ProtectedRoute user={user}>
-              <Search />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/content"
-          element={
-            <ProtectedRoute user={user}>
-              <ContentPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/originals"
-          element={
-            <ProtectedRoute user={user}>
-              <Originals />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/content" element={<ContentPage />} />
+        <Route path="/originals" element={<Originals />} />
       </Routes>
     </BrowserRouter>
   );
