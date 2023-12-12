@@ -4,6 +4,7 @@ import getContentInfo from "../utils/getContentInfo";
 import getPosters from "../utils/getPosters";
 import { contentInfo } from "./types";
 import { posterAndName } from "./types";
+import { addToWatchlist } from "../utils/handleData";
 import ImageSlider from "./image-slider";
 import "./contentPage.css";
 function ContentPage() {
@@ -58,7 +59,17 @@ function ContentPage() {
               </svg>
               <p>Play</p>
             </div>
-            <div className="watchlist-button">
+            <div
+              className="watchlist-button"
+              onClick={() => {
+                let thumbnailInfo: posterAndName = {
+                  poster_path: location.state.poster_path,
+                  id: location.state.id,
+                  contentType: location.state.contentType,
+                };
+                addToWatchlist(thumbnailInfo);
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0.25 0.25 25.5 25.5"

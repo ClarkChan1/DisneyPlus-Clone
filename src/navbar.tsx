@@ -57,7 +57,12 @@ function Navbar(props: Props) {
           </svg>
           <a className="section-title">Search</a>
         </div>
-        <div className="section-container">
+        <div
+          className="section-container"
+          onClick={() => {
+            navigate("/watchlist");
+          }}
+        >
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"

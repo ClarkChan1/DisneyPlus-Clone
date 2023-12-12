@@ -79,7 +79,11 @@ function ImageSlider(props: Props) {
               className="content-img"
               onClick={() => {
                 navigate("/content", {
-                  state: { id: content.id, contentType: content.contentType },
+                  state: {
+                    id: content.id,
+                    contentType: content.contentType,
+                    poster_path: content.poster_path,
+                  },
                 });
               }}
             />

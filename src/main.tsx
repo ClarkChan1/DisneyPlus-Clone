@@ -7,6 +7,7 @@ import Home from "./home";
 import Search from "./search";
 import ContentPage from "./contentPage";
 import Originals from "./originals";
+import WatchList from "./watchlist";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -35,6 +36,7 @@ function Main() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/watchlist" element={<WatchList />} />
         <Route path="/content" element={<ContentPage />} />
         <Route path="/originals" element={<Originals />} />
       </Routes>
