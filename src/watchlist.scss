@@ -1,0 +1,11 @@
+.watchlist-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .title {
+    font-family: "disney-font-bold";
+    font-size: 44px;
+    letter-spacing: 1px;
+    color: #f9f9f9;
+  }
+}

@@ -9,11 +9,11 @@ function WatchList() {
   const [media, updateMedia] = useState<posterAndName[]>([]);
   useEffect(() => {
     let storedData = getWatchlist();
-    console.log("storedData: ", storedData);
     updateMedia(storedData);
   }, []);
   return (
-    <div className="watch-list-container">
+    <div className="watchlist-container">
+      <p className="title">Watchlist</p>
       <ContentGrid media={media} />
     </div>
   );

@@ -38,7 +38,7 @@ function Main() {
         <Route path="/search" element={<Search />} />
         <Route path="/watchlist" element={<WatchList />} />
         <Route path="/content" element={<ContentPage />} />
-        <Route path="/originals" element={<Originals />} />
+        <Route path="/originals" element={<Originals scrollY={scrollY} />} />
       </Routes>
     </BrowserRouter>
   );

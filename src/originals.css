@@ -1,3 +1,14 @@
-
+.originals-container .img-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+.originals-container .img-container .title-img {
+  height: 189px;
+  transition: height 250ms ease-in-out 0s, margin-top 350ms ease-in-out 0s;
+}
+.originals-container .img-container .scrolled-img {
+  height: 123px;
+}
 
 /*# sourceMappingURL=originals.css.map */

@@ -22,7 +22,11 @@ const contentQueries: ContentQuery[] = [
   },
 ];
 
-function Originals() {
+interface Props {
+  scrollY: number;
+}
+
+function Originals(props: Props) {
   const [contentTitleAndImages, updateContentTitleAndImages] = useState<
     titleAndImages[]
   >([]);
@@ -46,6 +50,13 @@ function Originals() {
   }, []);
   return (
     <div className="originals-container">
+      <div className="img-container">
+        <img
+          className={"title-img " + (props.scrollY != 0 ? "scrolled-img" : "")}
+          src="/images/originals.png"
+          alt=""
+        />
+      </div>
       {contentTitleAndImages.map((entry) => (
         <ContentRow
           key={entry.title}
