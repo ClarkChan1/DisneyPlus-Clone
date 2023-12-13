@@ -4,13 +4,18 @@ import getContentInfo from "../utils/getContentInfo";
 import getPosters from "../utils/getPosters";
 import { contentInfo } from "./types";
 import { posterAndName } from "./types";
-import { addToWatchlist } from "../utils/handleData";
+import {
+  addToWatchlist,
+  checkWatchlist,
+  removeFromWatchlist,
+} from "../utils/handleData";
 import ImageSlider from "./image-slider";
 import "./contentPage.css";
 function ContentPage() {
   const location = useLocation();
   const [contentInfo, updateContentInfo] = useState<contentInfo>();
   const [similarImages, updateSimilarImages] = useState<posterAndName[]>([]);
+  const [inWatchlist, updateInWatchlist] = useState<boolean>(false);
   useEffect(() => {
     async function getData() {
       updateContentInfo(
@@ -26,6 +31,9 @@ function ContentPage() {
     }
     getData();
     console.log("state: ", location.state.id, location.state.contentType);
+    updateInWatchlist(
+      checkWatchlist(location.state.id, location.state.contentType)
+    );
   }, [location]);
   return (
     <div className="content-container">
@@ -59,24 +67,46 @@ function ContentPage() {
               </svg>
               <p>Play</p>
             </div>
+
             <div
-              className="watchlist-button"
+              className={
+                "watchlist-button " + (inWatchlist ? "check-button" : "")
+              }
               onClick={() => {
                 let thumbnailInfo: posterAndName = {
                   poster_path: location.state.poster_path,
                   id: location.state.id,
                   contentType: location.state.contentType,
                 };
-                addToWatchlist(thumbnailInfo);
+                if (inWatchlist) {
+                  removeFromWatchlist(thumbnailInfo);
+                  updateInWatchlist(false);
+                } else {
+                  addToWatchlist(thumbnailInfo);
+                  updateInWatchlist(true);
+                }
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0.25 0.25 25.5 25.5"
-                className="button-icon"
-              >
-                <path d="M22.85 10.1H15.9V3.15a2.9 2.9 0 0 0-5.8 0v6.95H3.15a2.9 2.9 0 0 0 0 5.8h6.95v6.95a2.9 2.9 0 0 0 5.8 0V15.9h6.95a2.9 2.9 0 1 0 0-5.8Z" />
-              </svg>
+              {inWatchlist ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 36 36"
+                  className="check-icon"
+                >
+                  <path
+                    fill="#0072D2"
+                    d="M12.935 26.59a1.472 1.472 0 0 0 2.038 0l13.105-14.452a1.37 1.37 0 0 0 0-1.978 1.472 1.472 0 0 0-2.038 0L13.954 23.63 9.21 19.018a1.472 1.472 0 0 0-2.038 0 1.37 1.37 0 0 0 0 1.978l5.763 5.594z"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0.25 0.25 25.5 25.5"
+                  className="button-icon"
+                >
+                  <path d="M22.85 10.1H15.9V3.15a2.9 2.9 0 0 0-5.8 0v6.95H3.15a2.9 2.9 0 0 0 0 5.8h6.95v6.95a2.9 2.9 0 0 0 5.8 0V15.9h6.95a2.9 2.9 0 1 0 0-5.8Z" />
+                </svg>
+              )}
             </div>
           </div>
           <p className="description">{contentInfo?.description}</p>
