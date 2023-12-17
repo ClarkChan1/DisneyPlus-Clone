@@ -7,13 +7,13 @@ interface Props {
 
 function Dropdown(props: Props) {
   const [showDropdown, updateShowDropdown] = useState<boolean>(false);
-  const [currentGenre, updateCurrentGenre] = useState<string>("Action");
+  const [currentGenre, updateCurrentGenre] = useState<string>(props.genres[0]);
 
   function handleGenreChange(
     event: React.MouseEvent<HTMLParagraphElement, MouseEvent>
   ) {
     let pElement = event.target as HTMLElement;
-    updateCurrentGenre(pElement.innerHTML);
+    updateCurrentGenre(pElement.innerText);
   }
 
   return (

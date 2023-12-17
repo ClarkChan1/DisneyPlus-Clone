@@ -126,7 +126,12 @@ function Navbar(props: Props) {
           </svg>
           <a className="section-title">Movies</a>
         </div>
-        <div className="section-container">
+        <div
+          className="section-container"
+          onClick={() => {
+            navigate("/series");
+          }}
+        >
           <svg
             aria-hidden="true"
             aria-label="series"

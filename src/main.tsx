@@ -9,6 +9,7 @@ import ContentPage from "./contentPage";
 import Originals from "./originals";
 import WatchList from "./watchlist";
 import Movies from "./movies";
+import Series from "./series";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -41,6 +42,7 @@ function Main() {
         <Route path="/content" element={<ContentPage />} />
         <Route path="/originals" element={<Originals scrollY={scrollY} />} />
         <Route path="/movies" element={<Movies />} />
+        <Route path="/series" element={<Series />} />
       </Routes>
     </BrowserRouter>
   );
