@@ -1,11 +1,15 @@
 @import "./globals.scss";
 
+html,
+body {
+  background: rgb(26, 29, 41);
+}
+
 .content-container {
-  background-color: rgb(26, 29, 41);
   margin-top: -$navbar-height;
   .backdrop-container {
     background-size: cover;
-    position: sticky;
+    position: relative;
     top: 0;
     width: 100%;
     .backdrop {
@@ -131,9 +135,4 @@
       }
     }
   }
-}
-
-html,
-body {
-  background: rgb(26, 29, 41);
 }

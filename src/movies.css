@@ -1,0 +1,15 @@
+.movies-container .title-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.movies-container .title-container .title {
+  padding-left: 76px;
+  margin: 0.5em 0;
+  font-family: "disney-font-bold";
+  font-size: 44px;
+  letter-spacing: 1px;
+  color: #f9f9f9;
+}
+
+/*# sourceMappingURL=movies.css.map */

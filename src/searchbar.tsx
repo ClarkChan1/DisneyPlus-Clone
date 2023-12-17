@@ -9,7 +9,6 @@ interface Props {
 
 function Searchbar(props: Props) {
   const [searchText, updateSearchText] = useState("");
-  const textBoxRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     async function getData() {
       // get movies
@@ -22,7 +21,6 @@ function Searchbar(props: Props) {
   return (
     <div className="searchbar-container">
       <input
-        ref={textBoxRef}
         className="searchbar"
         type="text"
         placeholder="Search by title, character, or genre"
@@ -37,7 +35,6 @@ function Searchbar(props: Props) {
         <div
           className="clear-button"
           onClick={() => {
-            textBoxRef.current!.value = "";
             updateSearchText("");
           }}
         >
