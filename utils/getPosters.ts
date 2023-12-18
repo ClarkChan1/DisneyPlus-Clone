@@ -1,3 +1,5 @@
+import { DiscoverCompany, DiscoverGenre, Search, Similar } from "../src/types";
+
 const fetch_options = {
   method: "GET",
   headers: {

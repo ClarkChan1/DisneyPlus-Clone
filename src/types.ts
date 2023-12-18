@@ -22,3 +22,21 @@ export interface titleAndImages {
   title: string;
   images: posterAndName[];
 }
+
+export interface DiscoverCompany {
+  contentType: string;
+  company: string;
+}
+export interface DiscoverGenre {
+  contentType: string;
+  genre: string;
+}
+
+export interface Search {
+  contentType: string;
+  query: string;
+}
+export interface Similar {
+  contentType: string;
+  id: number;
+}
