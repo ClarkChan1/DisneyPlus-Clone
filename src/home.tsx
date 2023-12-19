@@ -1,30 +1,29 @@
 import { useEffect, useState } from "react";
 import "./home.css";
 import getPosters from "../utils/getPosters";
-import { titleAndImages, ContentQuery } from "./types";
+import { titleAndImages, ContentQuery, DiscoverCompany, Search } from "./types";
 import ContentRow from "./contentRow";
 
 const contentQueries: ContentQuery[] = [
   {
     searchType: "discover",
     contentType: "tv",
-    query: "Disney Television Animation",
-    title: "Disney Channel",
+    company: "Disney Television Animation",
   },
   {
     searchType: "discover",
     contentType: "movie",
-    query: "Walt Disney Animation Studios",
+    company: "Walt Disney Animation Studios",
   },
   {
     searchType: "discover",
     contentType: "movie",
-    query: "Marvel Studios",
+    company: "Marvel Studios",
   },
   {
     searchType: "discover",
     contentType: "movie",
-    query: "Pixar",
+    company: "Pixar",
   },
   {
     searchType: "search",
@@ -41,13 +40,21 @@ function Home() {
     async function getData() {
       let updatedContent: titleAndImages[] = [];
       for (const contentQuery of contentQueries) {
-        let contentImages = await getPosters(
-          contentQuery.searchType,
-          contentQuery.contentType,
-          contentQuery.query
-        );
+        let contentImages;
+        if (contentQuery.searchType === "search") {
+          contentImages = await getPosters({
+            contentType: contentQuery.contentType,
+            query: contentQuery.query,
+          } as Search);
+        } else if (contentQuery.searchType === "discover") {
+          contentImages = await getPosters({
+            contentType: contentQuery.contentType,
+            company: contentQuery.company,
+          } as DiscoverCompany);
+        }
         updatedContent.push({
-          title: contentQuery.title || contentQuery.query,
+          title:
+            contentQuery.query || contentQuery.company || "error, no title",
           images: contentImages,
         });
       }

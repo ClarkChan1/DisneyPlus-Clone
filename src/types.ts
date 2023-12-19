@@ -14,8 +14,8 @@ export interface contentInfo {
 export interface ContentQuery {
   searchType: string;
   contentType: string;
-  query: string;
-  title?: string;
+  company?: string;
+  query?: string;
 }
 
 export interface titleAndImages {
@@ -38,5 +38,23 @@ export interface Search {
 }
 export interface Similar {
   contentType: string;
-  id: number;
+  id: number | string;
+}
+
+export function instanceOfDiscoverCompany(
+  object: any
+): object is DiscoverCompany {
+  return "company" in object;
+}
+
+export function instanceOfDiscoverGenre(object: any): object is DiscoverGenre {
+  return "genre" in object;
+}
+
+export function instanceOfSearch(object: any): object is Search {
+  return "query" in object;
+}
+
+export function instanceOfSimilar(object: any): object is Similar {
+  return "id" in object;
 }

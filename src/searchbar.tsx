@@ -1,7 +1,7 @@
 import { useEffect, useState, Dispatch, SetStateAction, useRef } from "react";
 import "./searchbar.css";
 import getPosters from "../utils/getPosters";
-import { posterAndName } from "./types";
+import { posterAndName, Search } from "./types";
 interface Props {
   updateMovies: Dispatch<SetStateAction<posterAndName[]>>;
   updateTV: Dispatch<SetStateAction<posterAndName[]>>;
@@ -12,9 +12,13 @@ function Searchbar(props: Props) {
   useEffect(() => {
     async function getData() {
       // get movies
-      props.updateMovies(await getPosters("search", "movie", searchText));
+      props.updateMovies(
+        await getPosters({ contentType: "movie", query: searchText } as Search)
+      );
       // get tv series
-      props.updateTV(await getPosters("search", "tv", searchText));
+      props.updateTV(
+        await getPosters({ contentType: "tv", query: searchText } as Search)
+      );
     }
     getData();
   }, [searchText]);

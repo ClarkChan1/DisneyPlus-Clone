@@ -1,6 +1,6 @@
 import "./originals.css";
 import ContentRow from "./contentRow";
-import { ContentQuery, titleAndImages } from "./types";
+import { ContentQuery, titleAndImages, DiscoverCompany } from "./types";
 import { useEffect, useState } from "react";
 import getPosters from "../utils/getPosters";
 
@@ -8,17 +8,17 @@ const contentQueries: ContentQuery[] = [
   {
     searchType: "discover",
     contentType: "movie",
-    query: "Disney",
+    company: "Disney",
   },
   {
     searchType: "discover",
     contentType: "movie",
-    query: "Walt Disney Animation Studios",
+    company: "Walt Disney Animation Studios",
   },
   {
     searchType: "discover",
     contentType: "movie",
-    query: "DisneyToon Studios",
+    company: "DisneyToon Studios",
   },
 ];
 
@@ -34,13 +34,12 @@ function Originals(props: Props) {
     async function getData() {
       let updatedContent: titleAndImages[] = [];
       for (const contentQuery of contentQueries) {
-        let contentImages = await getPosters(
-          contentQuery.searchType,
-          contentQuery.contentType,
-          contentQuery.query
-        );
+        let contentImages = await getPosters({
+          contentType: contentQuery.contentType,
+          company: contentQuery.company,
+        } as DiscoverCompany);
         updatedContent.push({
-          title: contentQuery.title || contentQuery.query,
+          title: contentQuery.company || "",
           images: contentImages,
         });
       }

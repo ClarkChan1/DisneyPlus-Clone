@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import getContentInfo from "../utils/getContentInfo";
 import getPosters from "../utils/getPosters";
-import { contentInfo } from "./types";
-import { posterAndName } from "./types";
+import { contentInfo, posterAndName, Similar } from "./types";
 import {
   addToWatchlist,
   checkWatchlist,
@@ -22,11 +21,10 @@ function ContentPage() {
         await getContentInfo(location.state.id, location.state.contentType)
       );
       updateSimilarImages(
-        await getPosters(
-          "similar",
-          location.state.contentType,
-          "" + location.state.id
-        )
+        await getPosters({
+          contentType: location.state.contentType,
+          id: "" + location.state.id,
+        } as Similar)
       );
     }
     getData();
