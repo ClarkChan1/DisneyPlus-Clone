@@ -29,7 +29,7 @@ export interface DiscoverCompany {
 }
 export interface DiscoverGenre {
   contentType: string;
-  genre: string;
+  genre: number;
 }
 
 export interface Search {

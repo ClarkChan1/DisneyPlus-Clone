@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import "./dropdown.css";
-
+import { DiscoverGenre, posterAndName } from "./types";
+import getPosters from "../utils/getPosters";
 interface Props {
   genres: string[];
+  genreMap: { [key: string]: number };
+  updateMedia: Dispatch<SetStateAction<posterAndName[]>>;
 }
 
 function Dropdown(props: Props) {
@@ -15,6 +18,20 @@ function Dropdown(props: Props) {
     let pElement = event.target as HTMLElement;
     updateCurrentGenre(pElement.innerText);
   }
+
+  useEffect(() => {
+    async function getData() {
+      console.log("currentGenre: ", currentGenre);
+
+      props.updateMedia(
+        await getPosters({
+          contentType: "movie",
+          genre: props.genreMap[currentGenre],
+        } as DiscoverGenre)
+      );
+    }
+    getData();
+  }, [currentGenre]);
 
   return (
     <div
