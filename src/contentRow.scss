@@ -3,7 +3,36 @@
   .section-title {
     font-size: 20px;
     user-select: none;
-    padding-left: $edge-padding;
+    padding-left: 76px;
     margin-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .content-row-container {
+    .section-title {
+      padding-left: ($arrow-dimensions - 12) + (2 * $arrow-padding) + 20;
+    }
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .content-row-container {
+    .section-title {
+      padding-left: ($arrow-dimensions - 8) + (2 * $arrow-padding) + 20;
+    }
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .content-row-container {
+    .section-title {
+      padding-left: ($arrow-dimensions - 4) + (2 * $arrow-padding) + 20;
+    }
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .content-row-container {
+    .section-title {
+      padding-left: $arrow-dimensions + (2 * $arrow-padding) + 20;
+    }
   }
 }

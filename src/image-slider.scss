@@ -41,3 +41,44 @@
   outline: 3px solid white;
   outline-offset: 3px;
 }
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .image-slider-container {
+    .nav-button {
+      .arrow-icon {
+        height: $arrow-dimensions - 12;
+        width: $arrow-dimensions - 12;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .image-slider-container {
+    .nav-button {
+      .arrow-icon {
+        height: $arrow-dimensions - 8;
+        width: $arrow-dimensions - 8;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .image-slider-container {
+    .nav-button {
+      .arrow-icon {
+        height: $arrow-dimensions - 4;
+        width: $arrow-dimensions - 4;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .image-slider-container {
+    .nav-button {
+      .arrow-icon {
+        height: $arrow-dimensions;
+        width: $arrow-dimensions;
+      }
+    }
+  }
+}
