@@ -1,14 +1,12 @@
 import { posterAndName } from "../src/types";
 export function addToWatchlist(thumbnailInfo: posterAndName) {
   let watchlistData = JSON.parse(localStorage.getItem("watchlist") || "[]");
-  console.log("in addtowatchlist, current watchlist: ", watchlistData);
   watchlistData.push(thumbnailInfo);
   localStorage.setItem("watchlist", JSON.stringify(watchlistData));
 }
 
 export function removeFromWatchlist(thumbnailInfo: posterAndName) {
   let watchlistData = JSON.parse(localStorage.getItem("watchlist") || "[]");
-  console.log("in removefromwatchlist, current watchlist: ", watchlistData);
   watchlistData = watchlistData.filter(
     (content: posterAndName) =>
       !(
@@ -17,10 +15,7 @@ export function removeFromWatchlist(thumbnailInfo: posterAndName) {
         content.poster_path == thumbnailInfo.poster_path
       )
   );
-  console.log(
-    "in removefromwatchlist, current watchlist AFTER REMOVE: ",
-    watchlistData
-  );
+
   localStorage.setItem("watchlist", JSON.stringify(watchlistData));
 }
 

@@ -1,10 +1,8 @@
 import "./movies.css";
 import ContentGrid from "./contentGrid";
-import { useEffect, useState } from "react";
-import { getWatchlist } from "../utils/handleData";
-import { DiscoverGenre, posterAndName } from "./types";
+import { useState } from "react";
+import { posterAndName } from "./types";
 import Dropdown from "./dropdown";
-import getPosters from "../utils/getPosters";
 
 let genres = [
   "Action",
@@ -26,15 +24,16 @@ let genreMap = {
 
 function Movies() {
   const [media, updateMedia] = useState<posterAndName[]>([]);
-  useEffect(() => {
-    console.log("media changed: ", media);
-  }, [media]);
+  // useEffect(() => {
+  //   console.log("media changed: ", media);
+  // }, [media]);
 
   return (
     <div className="movies-container">
       <div className="title-container">
         <p className="title">Movies</p>
         <Dropdown
+          contentType="movie"
           genres={genres}
           genreMap={genreMap}
           updateMedia={updateMedia}

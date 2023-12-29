@@ -28,7 +28,6 @@ function ContentPage() {
       );
     }
     getData();
-    console.log("state: ", location.state.id, location.state.contentType);
     updateInWatchlist(
       checkWatchlist(location.state.id, location.state.contentType)
     );
