@@ -1,3 +1,5 @@
+@import "./globals.scss";
+
 @font-face {
   font-family: "disney-font";
   src: url("../fonts/disney-font.woff2");
@@ -5,6 +7,11 @@
 @font-face {
   font-family: "disney-font-bold";
   src: url("../fonts/disney-font-bold.woff2");
+}
+:root {
+  --arrow-dimensions: 36px;
+  --edge-padding: var(--arrow-dimensions) + $swiper-padding +
+    (2 * $arrow-padding);
 }
 
 html,
@@ -17,4 +24,37 @@ body {
 }
 
 .main-container {
+}
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  :root {
+    --arrow-dimensions: 24px;
+    --edge-padding: calc(
+      var(--arrow-dimensions) + #{$swiper-padding} + 2 * #{$arrow-padding}
+    );
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --arrow-dimensions: 28px;
+    --edge-padding: calc(
+      var(--arrow-dimensions) + #{$swiper-padding} + 2 * #{$arrow-padding}
+    );
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  :root {
+    --arrow-dimensions: 34px;
+    --edge-padding: calc(
+      var(--arrow-dimensions) + #{$swiper-padding} + 2 * #{$arrow-padding}
+    );
+  }
+}
+@media only screen and (min-width: 1441px) {
+  :root {
+    --arrow-dimensions: 36px;
+    --edge-padding: calc(
+      var(--arrow-dimensions) + #{$swiper-padding} + 2 *#{$arrow-padding}
+    );
+  }
 }

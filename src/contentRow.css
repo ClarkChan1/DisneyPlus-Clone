@@ -1,29 +1,8 @@
 .content-row-container .section-title {
   font-size: 20px;
   user-select: none;
-  padding-left: 76px;
+  padding-left: var(--edge-padding);
   margin-bottom: 0;
-}
-
-@media only screen and (min-width: 0px) and (max-width: 768px) {
-  .content-row-container .section-title {
-    padding-left: 64px;
-  }
-}
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .content-row-container .section-title {
-    padding-left: 68px;
-  }
-}
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
-  .content-row-container .section-title {
-    padding-left: 72px;
-  }
-}
-@media only screen and (min-width: 1441px) {
-  .content-row-container .section-title {
-    padding-left: 76px;
-  }
 }
 
 /*# sourceMappingURL=contentRow.css.map */

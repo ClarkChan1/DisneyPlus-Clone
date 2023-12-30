@@ -25,7 +25,7 @@ body {
   top: 56px;
 }
 .content-container .content-wrapper .logo-and-description-container {
-  padding: 76px;
+  padding: var(--edge-padding);
   font-size: 20px;
   color: #f9f9f9;
   display: flex;
@@ -111,11 +111,11 @@ body {
   fill: black;
 }
 .content-container .content-wrapper .suggested-container {
-  width: 90vw;
+  width: 95vw;
 }
 .content-container .content-wrapper .suggested-container p {
   margin: 0;
-  padding: 0 76px;
+  padding: 0 var(--edge-padding);
   color: #f9f9f9;
   font-size: 20px;
   text-transform: uppercase;
@@ -124,7 +124,7 @@ body {
 .content-container .content-wrapper .suggested-container .line-break {
   height: 2px;
   background: grey;
-  margin: 20px 76px;
+  margin: 20px var(--edge-padding);
   margin-right: 0px;
 }
 

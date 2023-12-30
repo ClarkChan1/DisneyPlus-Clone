@@ -30,7 +30,7 @@ body {
     top: 56px;
 
     .logo-and-description-container {
-      padding: $edge-padding;
+      padding: var(--edge-padding);
 
       font-size: 20px;
       color: #f9f9f9;
@@ -118,10 +118,10 @@ body {
       }
     }
     .suggested-container {
-      width: 90vw;
+      width: 95vw;
       p {
         margin: 0;
-        padding: 0 $edge-padding;
+        padding: 0 var(--edge-padding);
         color: #f9f9f9;
         font-size: 20px;
         text-transform: uppercase;
@@ -130,7 +130,7 @@ body {
       .line-break {
         height: 2px;
         background: grey;
-        margin: 20px $edge-padding;
+        margin: 20px var(--edge-padding);
         margin-right: 0px;
       }
     }

@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 20px 76px;
+  padding: 20px var(--edge-padding);
 }
 .search-grid .content-img {
   box-shadow: 0px 7px 7px -7px rgba(0, 0, 0, 0.5), 0px 16px 10px -10px rgba(0, 0, 0, 0.5), 0px 25px 14px -14px rgba(0, 0, 0, 0.5);
