@@ -24,7 +24,7 @@ body {
   :root {
     --arrow-dimensions: 24px;
     --edge-padding: calc(
-      var(--arrow-dimensions) + 20px + 2 * 10px
+      var(--arrow-dimensions) + 15px + 2 * 10px
     );
   }
 }
@@ -32,7 +32,7 @@ body {
   :root {
     --arrow-dimensions: 28px;
     --edge-padding: calc(
-      var(--arrow-dimensions) + 20px + 2 * 10px
+      var(--arrow-dimensions) + 15px + 2 * 10px
     );
   }
 }
@@ -40,7 +40,7 @@ body {
   :root {
     --arrow-dimensions: 34px;
     --edge-padding: calc(
-      var(--arrow-dimensions) + 20px + 2 * 10px
+      var(--arrow-dimensions) + 15px + 2 * 10px
     );
   }
 }
@@ -48,7 +48,7 @@ body {
   :root {
     --arrow-dimensions: 36px;
     --edge-padding: calc(
-      var(--arrow-dimensions) + 20px + 2 *10px
+      var(--arrow-dimensions) + 15px + 2 *10px
     );
   }
 }
