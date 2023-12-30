@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./main.css";
 import Navbar from "./navbar";
+import SmallNavbar from "./smallNavbar";
 import Home from "./home";
 import Search from "./search";
 import ContentPage from "./contentPage";
@@ -35,6 +36,7 @@ function Main() {
   return (
     <BrowserRouter>
       <Navbar scrollY={scrollY} />
+      <SmallNavbar scrollY={scrollY} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
