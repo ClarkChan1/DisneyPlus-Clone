@@ -38,10 +38,6 @@
         padding-left: 4px;
         padding-right: 4px;
       }
-      .section-title {
-        position: relative;
-        text-decoration: none;
-      }
     }
     .section-container::after {
       content: "";
@@ -58,6 +54,71 @@
     }
     .section-container:hover::after {
       transform: scale(1);
+    }
+    .extra-sections {
+      display: flex;
+      align-items: center;
+      position: relative;
+      height: fit-content;
+      gap: 4px;
+      cursor: pointer;
+      .section-icon {
+        height: 24px;
+        width: 24px;
+        fill: white;
+        position: relative;
+        padding: 10px 0px;
+      }
+      .section-dropdown {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        border-radius: 4px;
+        padding: 20px;
+        padding-right: 40px;
+
+        background: rgb(19, 19, 19);
+        border: 1px solid rgba(151, 151, 151, 0.34);
+        display: none;
+        z-index: 1;
+        color: rgb(202, 202, 202);
+        .row-container {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .section-title {
+          cursor: pointer;
+          margin: 0;
+          position: relative;
+          font-size: 13px;
+          color: white;
+        }
+        .section-title::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          border-radius: 2px;
+          bottom: -4px;
+          left: 0;
+          background-color: white;
+          transform-origin: left;
+          transition: transform 0.25s ease-out;
+          transform: scale(0);
+        }
+        .section-title:hover::after {
+          transform: scale(1);
+        }
+      }
+    }
+    .extra-sections:hover .section-dropdown,
+    .section-dropdown:hover {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: slidein 0.1s forwards;
     }
   }
   .profile-container {
@@ -77,6 +138,7 @@
     right: 0;
     padding: 20px;
     padding-top: 70px;
+    border-radius: 4px;
     background: rgb(19, 19, 19);
     border: 1px solid rgba(151, 151, 151, 0.34);
     display: none;

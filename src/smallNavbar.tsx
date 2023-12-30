@@ -79,77 +79,103 @@ function SmallNavbar(props: Props) {
             </g>
           </svg>
         </div>
-        <div
-          className="section-container"
-          onClick={() => {
-            navigate("/originals");
-          }}
-        >
+        <div className="extra-sections">
           <svg
             aria-hidden="true"
-            aria-label="originals"
+            aria-label="more"
             color="#f9f9f9"
             role="img"
             transform=""
             version="1.1"
             viewBox="0 0 36 36"
             xmlns="http://www.w3.org/2000/svg"
-            data-route="ORIGINALS"
             className="section-icon"
           >
             <title></title>
-            <path d="M17.625 26.028L10.44 30l1.373-8.412L6 15.631l8.033-1.228 3.592-7.653 3.592 7.653 8.033 1.228-5.813 5.957L24.81 30z"></path>
+            <path d="M19.53 28.827h-2.933a1.048 1.048 0 0 1-1.048-1.047v-2.933c0-.579.47-1.048 1.048-1.048h2.933c.578 0 1.047.47 1.047 1.048v2.933c0 .578-.469 1.047-1.047 1.047zm0-8.799h-2.933a1.048 1.048 0 0 1-1.048-1.047v-2.933c0-.579.47-1.048 1.048-1.048h2.933c.578 0 1.047.469 1.047 1.048v2.933c0 .578-.469 1.047-1.047 1.047zm0-8.8h-2.933a1.048 1.048 0 0 1-1.048-1.047V7.248c0-.578.47-1.047 1.048-1.047h2.933c.578 0 1.047.469 1.047 1.047v2.933c0 .579-.469 1.048-1.047 1.048z"></path>
           </svg>
-        </div>
-        <div
-          className="section-container"
-          onClick={() => {
-            navigate("/movies");
-          }}
-        >
-          <svg
-            aria-hidden="true"
-            aria-label="movies"
-            color="#f9f9f9"
-            role="img"
-            transform=""
-            version="1.1"
-            viewBox="0 0 36 36"
-            xmlns="http://www.w3.org/2000/svg"
-            data-route="MOVIES"
-            className="section-icon"
-          >
-            <title></title>
-            <path d="M24.71 20.07a2.97 2.97 0 1 0-4.2-4.2 2.97 2.97 0 0 0 4.2 4.2m-12.262 0a2.97 2.97 0 1 0-4.2-4.2 2.97 2.97 0 0 0 4.2 4.2m6.173-10.31a2.969 2.969 0 1 0-4.199 4.198 2.969 2.969 0 0 0 4.199-4.198m0 12.262a2.969 2.969 0 1 0-4.199 4.198 2.969 2.969 0 0 0 4.199-4.198m-1.544-4.629a.846.846 0 1 0-1.197 1.196.846.846 0 0 0 1.197-1.196m18.06-.644c-3.33 6.913-8.165 9.928-11.635 11.24-2.57.971-4.762 1.178-5.949 1.208-.348.032-.698.053-1.052.053C10.287 29.25 5.25 24.213 5.25 18S10.287 6.75 16.5 6.75c6.214 0 11.25 5.037 11.25 11.25a11.19 11.19 0 0 1-2.493 7.054c2.832-1.612 5.844-4.382 8.138-9.143a.968.968 0 0 1 1.742.838"></path>
-          </svg>
-        </div>
-        <div
-          className="section-container"
-          onClick={() => {
-            navigate("/series");
-          }}
-        >
-          <svg
-            aria-hidden="true"
-            aria-label="series"
-            color="#f9f9f9"
-            role="img"
-            transform=""
-            version="1.1"
-            viewBox="0 0 36 36"
-            xmlns="http://www.w3.org/2000/svg"
-            data-route="SERIES"
-            className="section-icon"
-          >
-            <title></title>
-            <path d="M18.84 11.965h6.722a4 4 0 0 1 4 4V26a4 4 0 0 1-4 4H10.375a4 4 0 0 1-4-4V15.965a4 4 0 0 1 4-4h6.211l-3.981-3.981a1.162 1.162 0 1 1 1.643-1.644l3.465 3.465 3.464-3.465a1.162 1.162 0 0 1 1.644 1.644l-3.982 3.981zm6.428 7.73a1.718 1.718 0 1 0 0-3.436 1.718 1.718 0 0 0 0 3.436zm0 6.011a1.718 1.718 0 1 0 0-3.435 1.718 1.718 0 0 0 0 3.435z"></path>
-          </svg>
+          <div className="section-dropdown">
+            <div className="row-container">
+              <svg
+                aria-hidden="true"
+                aria-label="originals"
+                color="#f9f9f9"
+                role="img"
+                transform=""
+                version="1.1"
+                viewBox="0 0 36 36"
+                xmlns="http://www.w3.org/2000/svg"
+                data-route="ORIGINALS"
+                className="section-icon"
+              >
+                <title></title>
+                <path d="M17.625 26.028L10.44 30l1.373-8.412L6 15.631l8.033-1.228 3.592-7.653 3.592 7.653 8.033 1.228-5.813 5.957L24.81 30z"></path>
+              </svg>
+              <p
+                className="section-title"
+                onClick={() => {
+                  navigate("/originals");
+                }}
+              >
+                Originals
+              </p>
+            </div>
+            <div className="row-container">
+              <svg
+                aria-hidden="true"
+                aria-label="movies"
+                color="#f9f9f9"
+                role="img"
+                transform=""
+                version="1.1"
+                viewBox="0 0 36 36"
+                xmlns="http://www.w3.org/2000/svg"
+                data-route="MOVIES"
+                className="section-icon"
+              >
+                <title></title>
+                <path d="M24.71 20.07a2.97 2.97 0 1 0-4.2-4.2 2.97 2.97 0 0 0 4.2 4.2m-12.262 0a2.97 2.97 0 1 0-4.2-4.2 2.97 2.97 0 0 0 4.2 4.2m6.173-10.31a2.969 2.969 0 1 0-4.199 4.198 2.969 2.969 0 0 0 4.199-4.198m0 12.262a2.969 2.969 0 1 0-4.199 4.198 2.969 2.969 0 0 0 4.199-4.198m-1.544-4.629a.846.846 0 1 0-1.197 1.196.846.846 0 0 0 1.197-1.196m18.06-.644c-3.33 6.913-8.165 9.928-11.635 11.24-2.57.971-4.762 1.178-5.949 1.208-.348.032-.698.053-1.052.053C10.287 29.25 5.25 24.213 5.25 18S10.287 6.75 16.5 6.75c6.214 0 11.25 5.037 11.25 11.25a11.19 11.19 0 0 1-2.493 7.054c2.832-1.612 5.844-4.382 8.138-9.143a.968.968 0 0 1 1.742.838"></path>
+              </svg>
+              <p
+                className="section-title"
+                onClick={() => {
+                  navigate("/movies");
+                }}
+              >
+                Movies
+              </p>
+            </div>
+            <div className="row-container">
+              <svg
+                aria-hidden="true"
+                aria-label="series"
+                color="#f9f9f9"
+                role="img"
+                transform=""
+                version="1.1"
+                viewBox="0 0 36 36"
+                xmlns="http://www.w3.org/2000/svg"
+                data-route="SERIES"
+                className="section-icon"
+              >
+                <title></title>
+                <path d="M18.84 11.965h6.722a4 4 0 0 1 4 4V26a4 4 0 0 1-4 4H10.375a4 4 0 0 1-4-4V15.965a4 4 0 0 1 4-4h6.211l-3.981-3.981a1.162 1.162 0 1 1 1.643-1.644l3.465 3.465 3.464-3.465a1.162 1.162 0 0 1 1.644 1.644l-3.982 3.981zm6.428 7.73a1.718 1.718 0 1 0 0-3.436 1.718 1.718 0 0 0 0 3.436zm0 6.011a1.718 1.718 0 1 0 0-3.435 1.718 1.718 0 0 0 0 3.435z"></path>
+              </svg>
+              <p
+                className="section-title"
+                onClick={() => {
+                  navigate("/series");
+                }}
+              >
+                Series
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="profile-container"></div>
       <div className="dropdown">
         <p>Edit Profile</p>
-        {/* <p onClick={signOutUser}>Sign Out</p> */}
       </div>
     </div>
   );

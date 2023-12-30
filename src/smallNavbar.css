@@ -40,10 +40,6 @@
   padding-left: 4px;
   padding-right: 4px;
 }
-.small-nav-bar-container .nav-bar-sections .section-container .section-title {
-  position: relative;
-  text-decoration: none;
-}
 .small-nav-bar-container .nav-bar-sections .section-container::after {
   content: "";
   position: absolute;
@@ -59,6 +55,69 @@
 }
 .small-nav-bar-container .nav-bar-sections .section-container:hover::after {
   transform: scale(1);
+}
+.small-nav-bar-container .nav-bar-sections .extra-sections {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: fit-content;
+  gap: 4px;
+  cursor: pointer;
+}
+.small-nav-bar-container .nav-bar-sections .extra-sections .section-icon {
+  height: 24px;
+  width: 24px;
+  fill: white;
+  position: relative;
+  padding: 10px 0px;
+}
+.small-nav-bar-container .nav-bar-sections .extra-sections .section-dropdown {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  border-radius: 4px;
+  padding: 20px;
+  padding-right: 40px;
+  background: rgb(19, 19, 19);
+  border: 1px solid rgba(151, 151, 151, 0.34);
+  display: none;
+  z-index: 1;
+  color: rgb(202, 202, 202);
+}
+.small-nav-bar-container .nav-bar-sections .extra-sections .section-dropdown .row-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.small-nav-bar-container .nav-bar-sections .extra-sections .section-dropdown .section-title {
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  font-size: 13px;
+  color: white;
+}
+.small-nav-bar-container .nav-bar-sections .extra-sections .section-dropdown .section-title::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: white;
+  transform-origin: left;
+  transition: transform 0.25s ease-out;
+  transform: scale(0);
+}
+.small-nav-bar-container .nav-bar-sections .extra-sections .section-dropdown .section-title:hover::after {
+  transform: scale(1);
+}
+.small-nav-bar-container .nav-bar-sections .extra-sections:hover .section-dropdown,
+.small-nav-bar-container .nav-bar-sections .section-dropdown:hover {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slidein 0.1s forwards;
 }
 .small-nav-bar-container .profile-container {
   height: 36px;
@@ -77,6 +136,7 @@
   right: 0;
   padding: 20px;
   padding-top: 70px;
+  border-radius: 4px;
   background: rgb(19, 19, 19);
   border: 1px solid rgba(151, 151, 151, 0.34);
   display: none;
