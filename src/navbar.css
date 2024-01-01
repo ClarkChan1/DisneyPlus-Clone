@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   font-family: "disney-font";
-  font-size: 13px;
+  font-size: 15px;
 }
 .nav-bar-container .nav-bar-sections {
   display: flex;
@@ -57,6 +57,7 @@
   transform: scale(1);
 }
 .nav-bar-container .profile-container {
+  flex-shrink: 0;
   height: 50px;
   width: 50px;
   margin-top: 10px;
