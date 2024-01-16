@@ -14,10 +14,13 @@
 
 html,
 body {
-  background: url("../images/background.png") 50%/cover no-repeat fixed;
   margin: 0;
   font-family: disney-font;
   color: white;
+}
+
+.main-container-body {
+  background: url("../images/background.png") 50%/cover no-repeat fixed;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 768px) {

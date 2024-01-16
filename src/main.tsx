@@ -33,6 +33,11 @@ function Main() {
     };
   }, []);
 
+  useEffect(() => {
+    document.body.classList.add("main-container-body");
+    return () => document.body.classList.remove("main-container-body");
+  }, []);
+
   return (
     <BrowserRouter>
       <Navbar scrollY={scrollY} />

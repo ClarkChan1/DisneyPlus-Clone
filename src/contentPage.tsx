@@ -32,6 +32,10 @@ function ContentPage() {
       checkWatchlist(location.state.id, location.state.contentType)
     );
   }, [location]);
+  useEffect(() => {
+    document.body.classList.add("content-body");
+    return () => document.body.classList.remove("content-body");
+  }, []);
   return (
     <div className="content-container">
       <div className="backdrop-container">
