@@ -175,7 +175,7 @@ function SmallNavbar(props: Props) {
       </div>
       <div className="profile-container"></div>
       <div className="dropdown">
-        <p>Edit Profile</p>
+        <p onClick={() => navigate("/edit-profile")}>Edit Profile</p>
       </div>
     </div>
   );

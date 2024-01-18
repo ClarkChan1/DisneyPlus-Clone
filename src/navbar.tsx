@@ -152,7 +152,7 @@ function Navbar(props: Props) {
       </div>
       <div className="profile-container"></div>
       <div className="dropdown">
-        <p>Edit Profile</p>
+        <p onClick={() => navigate("/edit-profile")}>Edit Profile</p>
         {/* <p onClick={signOutUser}>Sign Out</p> */}
       </div>
     </div>

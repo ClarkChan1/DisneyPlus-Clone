@@ -11,6 +11,7 @@ import Originals from "./originals";
 import WatchList from "./watchlist";
 import Movies from "./movies";
 import Series from "./series";
+import EditProfile from "./edit-profile";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -50,6 +51,7 @@ function Main() {
         <Route path="/originals" element={<Originals scrollY={scrollY} />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/series" element={<Series />} />
+        <Route path="/edit-profile" element={<EditProfile />} />
       </Routes>
     </BrowserRouter>
   );

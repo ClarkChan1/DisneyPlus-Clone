@@ -1,0 +1,50 @@
+@import "./globals.scss";
+.edit-profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: var(--edge-padding);
+  p {
+    font-size: 20px;
+    font-family: "disney-font-bold";
+  }
+  .profile-pic-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    .profile-icon {
+      border-radius: 50%;
+    }
+    .profile-icon:hover {
+      transition: 0.15s ease-in;
+      transform: scale(1.05);
+      outline: 3px solid white;
+      outline-offset: 3px;
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .profile-icon {
+    height: 75px;
+    width: 75px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .profile-icon {
+    height: 125px;
+    width: 125px;
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .profile-icon {
+    height: 175px;
+    width: 175px;
+  }
+}
+@media only screen and (min-width: 1441px) {
+  .profile-icon {
+    height: 200px;
+    width: 200px;
+  }
+}
