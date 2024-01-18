@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./smallNavbar.css";
 interface Props {
   scrollY: number;
+  profilePic: string;
 }
 function SmallNavbar(props: Props) {
   const navigate = useNavigate();
@@ -173,7 +174,7 @@ function SmallNavbar(props: Props) {
           </div>
         </div>
       </div>
-      <div className="profile-container"></div>
+      <img className="profile-container" src={props.profilePic}></img>
       <div className="dropdown">
         <p onClick={() => navigate("/edit-profile")}>Edit Profile</p>
       </div>

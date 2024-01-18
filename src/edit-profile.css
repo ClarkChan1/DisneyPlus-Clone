@@ -15,6 +15,7 @@
 }
 .edit-profile-container .profile-pic-container .profile-icon {
   border-radius: 50%;
+  cursor: pointer;
 }
 .edit-profile-container .profile-pic-container .profile-icon:hover {
   transition: 0.15s ease-in;

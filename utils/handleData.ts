@@ -32,3 +32,11 @@ export function checkWatchlist(id: number, contentType: string) {
     ).length > 0
   );
 }
+
+export function getProfilePic(): string {
+  return localStorage.getItem("profilePic") || "images/mickey.png";
+}
+
+export function setProfilePic(picPath: string) {
+  localStorage.setItem("profilePic", picPath);
+}

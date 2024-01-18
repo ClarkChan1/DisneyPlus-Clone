@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./navbar.css";
 interface Props {
   scrollY: number;
+  profilePic: string;
 }
 function Navbar(props: Props) {
   const navigate = useNavigate();
@@ -150,7 +151,7 @@ function Navbar(props: Props) {
           <a className="section-title">Series</a>
         </div>
       </div>
-      <div className="profile-container"></div>
+      <img className="profile-container" src={props.profilePic}></img>
       <div className="dropdown">
         <p onClick={() => navigate("/edit-profile")}>Edit Profile</p>
         {/* <p onClick={signOutUser}>Sign Out</p> */}
